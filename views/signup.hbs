@@ -1,0 +1,51 @@
+<title>Products > Signup</title>
+
+<div class="container mt-4 mb-4">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3><i class="fas fa-user-plus mr-4"></i>  Registrate</h3>
+				
+			</div>
+			<div class="card-body">
+				<script>if(message.length>0){</script>
+					<div class="alert text-danger text-center">
+						{{message}}
+					</div>
+
+				<script>}</script>
+			
+				<form action="/signup" method="post">
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-at"></i></span>
+						</div>
+						<input type="email" class="form-control" name="email" placeholder="Correo electronico">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="Contraseña">
+					</div>
+
+					<div class="row">
+					
+					<div class="col-8 form-group">
+						<input type="submit" value="Siguiente" class="btn btn-outline-primary float-right login_btn btn-lg">
+					</div>
+					</div>
+
+				</form>
+				
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					¿Ya tienes una cuenta?<a href="/login">Inicia sesión.</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

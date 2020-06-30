@@ -1,0 +1,18 @@
+.navbar{  
+	background: #5161ce;
+	background: radial-gradient(circle, #5161ce 0%, #6974c0 100%);
+	box-shadow: 3px 0px 1px black ;
+	padding-bottom: 20px;
+	height: 80px;
+  }
+  .nav-link:hover{
+	font-size:xx-large;
+	color:rgb(255, 255, 255);
+	text-shadow:0px 1px 5px rgb(0, 0, 0);
+  }
+  .nav-link{
+	font-size:x-large;
+  }
+  .navtext{
+	color: white;
+  }

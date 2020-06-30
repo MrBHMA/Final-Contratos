@@ -1,0 +1,22 @@
+<title>Products > profile</title>
+
+
+
+<div class="container">
+  <h3 class="text-center">Perfil de usuario</h3>
+
+  <div class="card mx-auto" style="width:400px;">
+    <img class="card-img-top mx-auto mt-2" src="/static/img/awa_avatar.png" alt="Card image" style="width:90%;">
+    <div class="card-body">
+      <h4 class="card-title"></h4>
+      <p class="card-text text-white">
+        <strong class="">ID</strong>: {{user._id}}
+        <br><strong class="">email</strong>: {{user.local.email}}
+        <br><strong class="text-white">password</strong>: <code>{{user.local.password}}</code>
+
+      </p>
+      <a href="/logout" class="btn btn-danger" style=" float: right ;">Cerrar Sesión</a>
+    </div>
+  </div>
+  <br>
+</div>
