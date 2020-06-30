@@ -10,16 +10,16 @@ const fs = require('fs');
 app.get('/',(req,res)=>{ //get para cargar home
     res.render('login')
 })
-app.get('/home',/*isLoggedIn*/(req,res)=>{
+app.get('/home',isLoggedIn,(req,res)=>{
     res.render('home')
 })
-app.get('/Contratos', (req,res)=>{
+app.get('/Contratos',isLoggedIn, (req,res)=>{
     res.render('ContratoCV.hbs')
 })
-app.get('/about', (req,res)=>{
+app.get('/about',isLoggedIn, (req,res)=>{
     res.render('about.hbs')
 })
-app.get('/contact', (req,res)=>{
+app.get('/contact',isLoggedIn, (req,res)=>{
     res.render('contact.hbs')
 })
 //login . . . . .
