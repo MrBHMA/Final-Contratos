@@ -7,7 +7,7 @@ h2{
 label {
 	font-family: liberation sans;
 	font-size: 19px;
-	
+
 }
 
 
@@ -62,7 +62,7 @@ label {
 .contrato{
 	display: flex;
 	align-content: flex-start;
-	
+
 	padding-top: 2%;
 	padding-right: 25px;
 }
@@ -92,6 +92,69 @@ label {
     border-radius: 50%;
     color: rgb(14, 10, 233);
     }
+.Fecha1{
+		    height: 20px;
+		    width: 20px;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    border-radius: 50%;
+		    color: rgb(14, 10, 233);
+		    }
+.TPersona{
+				    height: 20px;
+				    width: 20px;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    border-radius: 50%;
+				    color: rgb(14, 10, 233);
+				    }
+						.DVendedor{
+						    height: 20px;
+						    width: 20px;
+						    display: flex;
+						    justify-content: center;
+						    align-items: center;
+						    border-radius: 50%;
+						    color: rgb(14, 10, 233);
+						    }
+								.CVarticulo{
+								    height: 20px;
+								    width: 20px;
+								    display: flex;
+								    justify-content: center;
+								    align-items: center;
+								    border-radius: 50%;
+								    color: rgb(14, 10, 233);
+								    }
+										.TAuto{
+										    height: 20px;
+										    width: 20px;
+										    display: flex;
+										    justify-content: center;
+										    align-items: center;
+										    border-radius: 50%;
+										    color: rgb(14, 10, 233);
+										    }
+												.Adquirido{
+												    height: 20px;
+												    width: 20px;
+												    display: flex;
+												    justify-content: center;
+												    align-items: center;
+												    border-radius: 50%;
+												    color: rgb(14, 10, 233);
+												    }
+														.Fadquirido{
+														    height: 20px;
+														    width: 20px;
+														    display: flex;
+														    justify-content: center;
+														    align-items: center;
+														    border-radius: 50%;
+														    color: rgb(14, 10, 233);
+														    }
 .icono{
     font-size: x-large;
 }

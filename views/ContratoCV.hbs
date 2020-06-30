@@ -36,9 +36,12 @@
 
 
     <br><br>
+    <div class="row" style="width:500px;" id="container">
     <label for = "fecha">Fecha</label>
     <input class =  "camponecesario" type = "date" name = "fecha" id = "fecha" >
-	<br><br>
+    <button type="button" class="Fecha1"><i class="fas fa-question-circle icono"></i></button>
+</div>
+  <br><br>
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --  Seccion del vendedor --  --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
@@ -48,12 +51,14 @@
     <br>
     <!-- --><!-- -->
     <!-- --><!-- -->
+
      <section class = "vendedor1">
       <label for = "tipo-de-persona-vendedor1">Tipo de persona</label>
       <select id = "tipo-de-persona-vendedor1" name = "tipodepersonavendedor1" value ="fisica" >
         <option value = "fisica">Fisica</option>
 		<option value = "moral">Moral</option>
       </select>
+      <button type="button" class="Tpersona"><i class="fas fa-question-circle icono"></i></button>
       <!-- -->
       <!-- -->
     <br>
@@ -69,6 +74,7 @@
 		<br>
 		  <label for = "VF1Direccion">Direccion</label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
           <input class =  "camponecesario" type = "text" name = "VF1Direccion" id = "VF1Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
+<button type="button" class="DVendedor"><i class="fas fa-question-circle icono"></i></button>
       </section>
       <!-- --><!-- -->
       <!-- --><!-- -->
@@ -107,6 +113,7 @@
 		<br>
 
       </select>
+          <button type="button" class="TPersona"><i class="fas fa-question-circle icono"></i></button>
       <!-- -->
       <!-- -->
       <br>
@@ -122,7 +129,7 @@
 		<br>
 		<label for = "VF2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
           <input class =  "camponecesario" type = "text" name = "VF2Direccion" id = "VF2Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false">
-
+    <button type="button" class="DVendedor"><i class="fas fa-question-circle icono"></i></button>
       </section>
       <!-- --><!-- -->
       <!-- --><!-- -->
@@ -174,6 +181,7 @@
 			<option value = "fisica">Fisica</option>
 			<option value = "moral">Moral</option>
 		</select>
+        <button type="button" class="TPersona"><i class="fas fa-question-circle icono"></i></button>
 		<!-- -->
 		<!-- -->
 		<section class = CM1>
@@ -224,6 +232,7 @@
 			<option value = "fisica">Fisica</option>
 			<option value = "moral">Moral</option>
 		</select>
+        <button type="button" class="TPersona"><i class="fas fa-question-circle icono"></i></button>
 		<br>
 		<!-- -->
 		<!-- -->
@@ -275,6 +284,7 @@
 	<!-- --><!-- parte2--><!-- parte2--><!--parte2 --><!--parte2 --><!--parte2 --><!--parte2 --><!-- parte2--><!--parte2 --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 	<section class = "parte2">
+    <button type="button" class="CVarticulo"><i class="fas fa-question-circle icono"></i></button>
 	<label for = "Tipo-de-objeto">Compra/venta de: </label>
 	<select id = "Tipo-de-objeto" name = "Tipodeobjeto" value ="Veiculo" >
 			<option value = "Veiculo">Vehiculo</option>
@@ -294,6 +304,7 @@
 			<option value="...">
 			<option value="...">
 		</datalist>
+        <button type="button" class="TAuto"><i class="fas fa-question-circle icono"></i></button>
 		<br><br>
 
 		<!--
@@ -339,10 +350,14 @@
 			<br><br>
 			<label for = "VehiculoAdquiridoDe">Adquirido de: </label>
 				<input class =  "camponecesario" type = "text" name = "VehiculoAdquiridoDe" id = "VehiculoAdquiridoDe" min = "3" max = "500"  >
-			<br><br>
+<button type="button" class="Adquirido"><i class="fas fa-question-circle icono"></i></button>
+      <br><br>
+
 			<label for = "fechaAdquirido">En la fecha: </label>
 				<input class =  "camponecesario" type = "date" name = "fechaAdquirido" id = "fechaAdquirido" >
-			<br><br>
+<button type="button" class="Fadquirido"><i class="fas fa-question-circle icono"></i></button>
+      <br><br>
+
 			<label for = "VehiculoDescripcion">Descripcion adicional: </label>
 				<input class =  "camponecesario" type = "text" name = "VehiculoDescripcion" id = "VehiculoDescripcion" min = "3" max = "500"  >
 			<br>
@@ -1328,7 +1343,14 @@ function SoloLetras(e) {
     }
 
 	$(function(){
-    $('.Ayuda').popover({title: "Como rayos se acomoda esto para estar en la misma linea que las demas cosas?", content: "Estupido icono ponte en tu lugar", trigger: "hover"});
+    $('.Fecha1').popover({title: "Fecha de la compra", content: "Escoge la fecha en la cual se realizara la compra-venta", trigger: "hover"});
+    $('.Ayuda').popover({title: "Municipio a escoger", content: "Escoge el municipio en el cual se realizara la compra-venta", trigger: "hover"});
+    $('.TPersona').popover({title: "Persona moral-fisica", content: "Escoge el tipo de persona que es el vendedor", trigger: "hover"});
+    $('.DVendedor').popover({title: "Direccion del vendedor", content: "Escribe la direccion del vendedor", trigger: "hover"});
+    $('.CVarticulo').popover({title: "Compra-venta del articulo", content: "Escoge el articulo a comprar-vender", trigger: "hover"});
+    $('.TAuto').popover({title: "Tipo de Automovil", content: "Escoge el tipo de Automovil en el cual se realizara la compra-venta", trigger: "hover"});
+    $('.Adquirido').popover({title: "Adquirido de", content: "Escribe de donde se obtuvo el vehiculo a vender", trigger: "hover"});
+    $('.Fadquirido').popover({title: "Fecha de adquisicion", content: "Escoge la fecha en la cual se adquirio el vehiculo de la compra-venta", trigger: "hover"});
   });
 
 </script>
