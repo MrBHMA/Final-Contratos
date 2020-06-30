@@ -22,7 +22,7 @@
 	<label for = "estado">Estado</label>
 		<input type = "text" name = "estado" id = "estado" value = "Baja California"   disabled>
 	<br><br>
-<div style="width:500px;" id="container">
+<div class="row" style="width:500px;" id="container">
 	<label for = "municipio">Municipio</label>
 	<select id = "municipio" name = "municipio">
 		<option value = "tijuana">Tijuana</option>
@@ -378,7 +378,7 @@
 				<input class =  "camponecesario" type = "text" name = "PrecioLetra" id = "PrecioLetra">
 			<br>
 
-	<label class =  "camponecesario" >Medio de pago: </label>
+	<label class =  "camponecesario" >Metodo de pago: </label>
 			<input type="radio" name="MetodoPago" id="Metodo-Pago-Efectivo" value="Efectivo" checked>
 				<label for="Metodo-Pago-Efectivo"> Efectivo </label>
 			<input type="radio" name="MetodoPago" id="Metodo-Pago-Cheque" value="Cheque">
@@ -386,7 +386,6 @@
 			<input type="radio" name="MetodoPago" id="Metodo-Pago-Otro" value="">
 				<label for="Metodo-Pago-Otro"> Otro </label>
 			<br>
-
 	<br><br><br>
 	</section>
 
@@ -396,10 +395,10 @@
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 
 		<br>
-		<input class = "Prev" type = "button" value = "Prev">
-		<input class = "Next" type = "button" value = "Next">
-		<input class = "Nuevo" type = "button" value = "Nuevo">
-		<input class = "Generar pdf" type = "submit" value = "Generar">
+		<button class = "Prev btn btn-warning" type = "button" value = "Prev"><i class="fas fa-arrow-left"></i> Anterior</button>
+		<button class = "Next btn btn-success" type = "button" value = "Next">Siguiente <i class="fas fa-arrow-right"></i></button>
+		<button class = "Nuevo btn btn-info" type = "button" value = "Nuevo"><i class="fas fa-plus"></i> Nuevo contrato</button>
+		<button class = "Generar btn btn-danger" type = "submit" value = "Generar PDF"><i class="fas fa-file-pdf"></i> Generar PDF</button>
 	</form>
 	</section>
 

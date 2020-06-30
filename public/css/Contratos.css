@@ -10,10 +10,10 @@ label {
 	
 }
 
+
 .Funcion{
 	padding-left: 20%;
 	padding-right: 50%;
-	border-bottom: 1px solid;
 	margin: 100;
 	padding: 50;
 }
@@ -23,7 +23,7 @@ label {
 
 .instrucciones{
 	color: black;
-	 border-bottom: 1px solid;
+	border-bottom: 1px solid;
 }
 
 .vendedor{
