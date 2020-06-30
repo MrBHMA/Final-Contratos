@@ -45,43 +45,51 @@
         <div class="row">
           <div class="col-4">
             <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">Tipos de contratos</a>
+              <a  class="list-group-item list-group-item-action" >Tipos de contratos</a>
               <a href="#" class="list-group-item list-group-item-action list-group-item-secondary" onclick="compr1();">Contrato de compraventa</a>
               <a href="#" class="list-group-item list-group-item-action list-group-item-secondary" onclick="compr2();">Contrato de arrendamiento</a>
               <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Contrato no definido</a>
             </div>
           </div>
           <div class="col-8 contrato">
-            <div class="row">
-
-
-                <div class="p1" id="comp">
-
-                    <h5 class="p1">Vista Previa</h5>
-                    <embed class="p1" id="comp" src="/static/pdf/compve.pdf#toolbar=0" type="application/pdf" width="200%" height="200%" />
-                  <div>
+                <div class=" " id="comp">
+                    <div class="col-10">
+                      <div class="" style="width:100%">
+                        
+                        <h5 class="text-center">Vista Previa</h5>
+                        <button type="button" class=" btn btn-outline-primary p-2 btn-lg" style="float: right;" onclick="generar(); location.href= '/Contratos'"><i class="fas fa-plus"></i> Nuevo Contrato</button>
+                    
+                      </div>
+                    
+                    <embed class="" id="comp" src="/static/pdf/compve.pdf#toolbar=0" type="application/pdf"  />
+                  
                     <div class="alert alert-success">
-  <strong>Se Creara</strong> un nuevo contrato <a  class="alert-link">de compraventa</a>.
-</div>
-                  <button type="button" class="btn btn-outline-dark col-5 p-2"> <i class="fas fa-search-plus"></i> AMPLIAR</button>
-                  <button type="button" class="btn btn-outline-dark col-5 p-2" onclick="generar(); location.href= '/Contratos'"><i class="fas fa-file-pdf"></i> </a>NUEVO</button>
+                      <strong>Se Creara</strong> un nuevo contrato <a  class="alert-link">de compraventa</a>.
+                    </div>
+                  
                   </div>
-
+                  
                 </div>
-                <div class="p2" id="comp2">
 
-                    <h5 class="p2">Vista Previa</h5>
-                    <embed class="p2" id="comp2" src="/static/pdf/Arremdamiento.pdf#toolbar=0" type="application/pdf" width="200%" height="200%" />
-
-                  <div>
+                <div class="p2 row" id="comp2">
+                    <div class="col-10">
+                      <div class="" style="width:100%">
+                        
+                        <h5 class="text-center">Vista Previa</h5>
+                        <button type="button" class=" btn btn-outline-primary p-2 btn-lg" style="float: right;" onclick="generar(); location.href= '/Contratos'"><i class="fas fa-plus"></i> Nuevo Contrato</button>
+                    
+                      </div>
+                    
+                    <embed class="" id="comp" src="/static/pdf/Arremdamiento.pdf#toolbar=0" type="application/pdf"  style="width: 1000px;" />
+                  
                     <div class="alert alert-success">
-  <strong>Se Creara</strong> un nuevo contrato <a  class="alert-link">de arrendamiento</a>.
-</div>
-                    <button type="button" class="btn btn-outline-dark col-5 p-2"> <i class="fas fa-search-plus"></i> AMPLIAR</button>
-                    <button type="button" class="btn btn-outline-dark col-5 p-2" onclick="generar(); location.href= '#'"><i class="fas fa-file-pdf"></i> </a>GENERAR</button>
+                      <strong>Se Creara</strong> un nuevo contrato <a  class="alert-link">de arrendamiento</a>.
+                    </div>
+                  
                   </div>
+                  
                 </div>
-            </div>
+            
           </div>
         </div>
     </div>
