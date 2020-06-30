@@ -55,7 +55,7 @@ require('./app/routes')(app, passport) //exportar el modulo de rutas y mando com
 //archivos estaticos
 app.use('/static',express.static('public'))
 
-moongose.connect('mongodb://localhost/chat')
+moongose.connect('mongodb+srv://admin1:admin1@contratos-database-a2ie7.mongodb.net/<dbname>?retryWrites=true&w=majority')
 .then(db => console.log('db connected'))
 .catch(err => console.log(err));
 
