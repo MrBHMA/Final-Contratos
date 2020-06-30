@@ -1,3 +1,18 @@
+
+body{
+	background: 
+        linear-gradient(180deg, rgba(248, 184, 139,0) 20%, rgba(248, 184, 139,.1) 20%, rgba(248, 184, 139,.1) 40%, rgba(248, 184, 139,.2) 40%, rgba(248, 184, 139,.2) 60%, rgba(248, 184, 139,.4) 60%, rgba(248, 184, 139,.4) 80%, rgba(248, 184, 139,.5) 80%),
+    linear-gradient(45deg, rgba(250, 248, 132,.3) 20%, rgba(250, 248, 132,.4) 20%, rgba(250, 248, 132,.4) 40%, rgba(250, 248, 132,.5) 40%, rgba(250, 248, 132,.5) 60%, rgba(250, 248, 132,.6) 60%, rgba(250, 248, 132,.6) 80%, rgba(250, 248, 132,.7) 80%),
+    linear-gradient(-45deg, rgba(186, 237, 145,0) 20%, rgba(186, 237, 145,.1) 20%, rgba(186, 237, 145,.1) 40%, rgba(186, 237, 145,.2) 40%, rgba(186, 237, 145,.2) 60%, rgba(186, 237, 145,.4) 60%, rgba(186, 237, 145,.4) 80%, rgba(186, 237, 145,.6) 80%),
+        linear-gradient(90deg, rgba(178, 206, 254,0) 20%, rgba(178, 206, 254,.3) 20%, rgba(178, 206, 254,.3) 40%, rgba(178, 206, 254,.5) 40%, rgba(178, 206, 254,.5) 60%, rgba(178, 206, 254,.7) 60%, rgba(178, 206, 254,.7) 80%, rgba(178, 206, 254,.8) 80%),
+    linear-gradient(-90deg, rgba(242, 162, 232,0) 20%, rgba(242, 162, 232,.4) 20%, rgba(242, 162, 232,.4) 40%, rgba(242, 162, 232,.5) 40%, rgba(242, 162, 232,.5) 60%, rgba(242, 162, 232,.6) 60%, rgba(242, 162, 232,.6) 80%, rgba(242, 162, 232,.8) 80%),
+    linear-gradient(180deg, rgba(254, 163, 170,0) 20%, rgba(254, 163, 170,.4) 20%, rgba(254, 163, 170,.4) 40%, rgba(254, 163, 170,.6) 40%, rgba(254, 163, 170,.6) 60%, rgba(254, 163, 170,.8) 60%, rgba(254, 163, 170,.8) 80%, rgba(254, 163, 170,.9) 80%)
+;
+    background-color: rgb(254, 163, 170);
+    background-size: 100% 100%;
+    min-height: 100%;
+
+}
 h2{
 	font-family: Arial;
 	color: firebrick;
@@ -56,9 +71,7 @@ label {
 
 }
 
-.t2{
 
-}
 .contrato{
 	display: flex;
 	align-content: flex-start;
@@ -83,78 +96,18 @@ label {
 	text-align: left;
 }
 
-.Ayuda{
-    height: 20px;
-    width: 20px;
+.botonAyuda{
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: rgb(14, 10, 233);
+	color: rgb(14, 10, 233);
+	border: 0; 
+	background-color: transparent;
     }
-.Fecha1{
-		    height: 20px;
-		    width: 20px;
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    border-radius: 50%;
-		    color: rgb(14, 10, 233);
-		    }
-.TPersona{
-				    height: 20px;
-				    width: 20px;
-				    display: flex;
-				    justify-content: center;
-				    align-items: center;
-				    border-radius: 50%;
-				    color: rgb(14, 10, 233);
-				    }
-						.DVendedor{
-						    height: 20px;
-						    width: 20px;
-						    display: flex;
-						    justify-content: center;
-						    align-items: center;
-						    border-radius: 50%;
-						    color: rgb(14, 10, 233);
-						    }
-								.CVarticulo{
-								    height: 20px;
-								    width: 20px;
-								    display: flex;
-								    justify-content: center;
-								    align-items: center;
-								    border-radius: 50%;
-								    color: rgb(14, 10, 233);
-								    }
-										.TAuto{
-										    height: 20px;
-										    width: 20px;
-										    display: flex;
-										    justify-content: center;
-										    align-items: center;
-										    border-radius: 50%;
-										    color: rgb(14, 10, 233);
-										    }
-												.Adquirido{
-												    height: 20px;
-												    width: 20px;
-												    display: flex;
-												    justify-content: center;
-												    align-items: center;
-												    border-radius: 50%;
-												    color: rgb(14, 10, 233);
-												    }
-														.Fadquirido{
-														    height: 20px;
-														    width: 20px;
-														    display: flex;
-														    justify-content: center;
-														    align-items: center;
-														    border-radius: 50%;
-														    color: rgb(14, 10, 233);
-														    }
+
 .icono{
     font-size: x-large;
 }
@@ -163,3 +116,12 @@ label {
     display:inline-block;
     width:130px;
 }
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color:#5161ce;
+	color: white;
+	text-align: center;
+  }

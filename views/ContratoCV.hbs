@@ -31,7 +31,7 @@
 		<option value = "rosarito">Rosarito</option>
 		<option value = "ensenada">Ensenada</option>
 	</select>
-    <button type="button" class="Ayuda"><i class="fas fa-question-circle icono"></i></button>
+    <button type="button" class="Ayuda botonAyuda"><i class="fas fa-question-circle icono"></i></button>
 </div>
 
 
@@ -39,7 +39,7 @@
     <div class="row" style="width:500px;" id="container">
     <label for = "fecha">Fecha</label>
     <input class =  "camponecesario" type = "date" name = "fecha" id = "fecha" >
-    <button type="button" class="Fecha1"><i class="fas fa-question-circle icono"></i></button>
+    <button type="button" class="Fecha1 botonAyuda"><i class="fas fa-question-circle icono"></i></button>
 </div>
   <br><br>
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
@@ -53,12 +53,14 @@
     <!-- --><!-- -->
 
      <section class = "vendedor1">
+		 <div class="row">
       <label for = "tipo-de-persona-vendedor1">Tipo de persona</label>
       <select id = "tipo-de-persona-vendedor1" name = "tipodepersonavendedor1" value ="fisica" >
         <option value = "fisica">Fisica</option>
 		<option value = "moral">Moral</option>
       </select>
-      <button type="button" class="Tpersona"><i class="fas fa-question-circle icono"></i></button>
+      <button type="button" class="Tpersona botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+	  	</div>
       <!-- -->
       <!-- -->
     <br>
@@ -72,9 +74,11 @@
         <input type="radio" name="VF1genero" id="VF1-h" value="h">
           <label for="VF1-h">H</label>
 		<br>
-		  <label for = "VF1Direccion">Direccion</label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario" type = "text" name = "VF1Direccion" id = "VF1Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
-<button type="button" class="DVendedor"><i class="fas fa-question-circle icono"></i></button>
+		<div class="row">
+		  	<label for = "VF1Direccion">Direccion</label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+         	<input class =  "camponecesario" type = "text" name = "VF1Direccion" id = "VF1Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
+			<button type="button" class="DVendedor botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
       </section>
       <!-- --><!-- -->
       <!-- --><!-- -->
