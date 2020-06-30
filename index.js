@@ -55,7 +55,7 @@ require('./app/routes')(app, passport) //exportar el modulo de rutas y mando com
 //archivos estaticos
 app.use('/static',express.static('public'))
 
-/*moongose.connect('mongodb+srv://admin1:admin1@contratos-database-a2ie7.mongodb.net/<dbname>?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin1:admin1@contratos-database-a2ie7.mongodb.net/contratos-database?retryWrites=true&w=majority')
 .then(db => console.log('db connected'))
 .catch(err => console.log(err));
 
@@ -64,7 +64,7 @@ app.set('port', process.env.PORT || 3000);
 server.listen(app.get('port'), ()=>{
   console.log(`server on port ${app.get('port')}`)
 });
-*/mongoose.connect('mongodb+srv://admin1:admin1@contratos-database-a2ie7.mongodb.net/contratos-database?retryWrites=true&w=majority',(err,res)=>{ //conectar con la base de datos.
+/*/mongoose.connect(config.db,config.urlParser,(err,res)=>{ //conectar con la base de datos.
     if(err){
         return console.log(`Error al conectar la BD ${err}`)
     }
@@ -72,4 +72,4 @@ server.listen(app.get('port'), ()=>{
     app.listen(config.port,()=>{
         console.log(`API-REST ejecutando en http://localhost:${config.port}`)
     })
-})
+})*/
