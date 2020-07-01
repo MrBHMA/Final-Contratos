@@ -515,7 +515,10 @@
 				<input type="radio" name="MetodoPago" id="Metodo-Pago-Otro" value="">
 				<label for="Metodo-Pago-Otro"> Otro </label>
 
-				
+			<div class = "otro-Metodo-Pago"> 
+				<label for = "otroMetodoPago">Metodo utilizado: </label>
+				<input class =  "camponecesario" type = "text" name = "otroMetodoPago" id = "otroMetodoPago">
+			</div>
 			<br>
 		</div>
 	</section>
@@ -873,6 +876,9 @@ const PrecioLetra = document.querySelector('#PrecioLetra')
 const MetodoEfectivo = document.querySelector('#Metodo-Pago-Efectivo')
 const MetodoCheque = document.querySelector('#Metodo-Pago-Cheque')
 const MetodoOtro = document.querySelector('#Metodo-Pago-Otro')
+const OtroMetododoPago = document.querySelector('#otroMetodoPago')
+const OtroMetododoPagodiv = document.getElementsByClassName('otro-Metodo-Pago')
+FunShoworHideOtro();
 
 // Asignar la parte que usaremos para actualizar el texto (esta al final del HTML)
 const primerParrafo = document.querySelector('#primerParrafo')
@@ -905,6 +911,25 @@ const nuevo = document.querySelector('.Nuevo')
 const generar = document.querySelector('.Generar')
 generar.style.display  =  'none';
 
+
+MetodoEfectivo.onclick = function(){
+	FunShoworHideOtro();
+}
+MetodoCheque.onclick = function(){
+	FunShoworHideOtro();
+}
+MetodoOtro.onclick = function(){
+	FunShoworHideOtro();
+}
+
+function FunShoworHideOtro(){
+	if (MetodoOtro.checked){
+		OtroMetododoPagodiv[0].style.display  =  'inline';
+	}
+	else{
+		OtroMetododoPagodiv[0].style.display  =  'none';
+	}
+}
 
 nuevo.onclick = function(){
 	document.getElementsByClassName('parte1')[0].style.display  =  'inline';
@@ -1187,6 +1212,7 @@ next.onclick = function(){
 			ParteActual = 3;
 			document.getElementsByClassName('parte2')[0].style.display  =  'none';
 			document.getElementsByClassName('parte3')[0].style.display  =  'inline';
+			FunShoworHideOtro();
 		}
 	} //Fin de acciones para parte 2
 
@@ -1402,6 +1428,7 @@ prev.onclick = function(){
 			document.getElementsByClassName('VistaPrevia')[0].style.display  =  'inline';
 			document.getElementsByClassName('parte3')[0].style.display  =  'inline';
 			document.getElementsByClassName('PDFsection')[0].style.display  =  'none';
+			FunShoworHideOtro();
 	}
 
 
