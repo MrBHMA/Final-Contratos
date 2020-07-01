@@ -2,60 +2,65 @@
 <title>Nuevo Contrato</title>
 
 <div class="Funcion">
-    <h3>Nuevo Contrato <h3>
-
-
+	<h3>Nuevo Contrato <h3>
 	<h2>Formato de contratos</h2>
-	<p class = "instrucciones">Instrucciones (wip)</p>
+	<p class = "instrucciones">Instrucciones: Ingresa los datos requeridos y da clic en siguiente</p>
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/2f6670760e.js" crossorigin="anonymous"></script>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<script src="https://kit.fontawesome.com/2f6670760e.js" crossorigin="anonymous"></script>
 
  <!--Seccion de campos-->
  <form action="/contrato" method="POST">
+
   <section class = "campos left">
-	<p>Ingresar datos</p>
+	<p>Ingresa Los datos</p>
 	<section class = "parte1">
-	<label for = "estado">Estado</label>
-		<input type = "text" name = "estado" id = "estado" value = "Baja California"   disabled>
-	<br><br>
-<div class="row" style="width:500px;" id="container">
-	<label for = "municipio">Municipio</label>
-	<select id = "municipio" name = "municipio">
-		<option value = "tijuana">Tijuana</option>
-		<option value = "tecate">Tecate</option>
-		<option value = "mexicali">Mexicali</option>
-		<option value = "rosarito">Rosarito</option>
-		<option value = "ensenada">Ensenada</option>
-	</select>
-    <button type="button" class="Ayuda botonAyuda"><i class="fas fa-question-circle icono"></i></button>
-</div>
 
+		<div class="row ml-3">
+			<label for = "estado">Estado</label>
+			<input type = "text" name = "estado" id = "estado" value = "Baja California"   disabled>
+		</div>
+		<br>
 
-    <br><br>
-    <div class="row" style="width:500px;" id="container">
-    <label for = "fecha">Fecha</label>
-    <input class =  "camponecesario" type = "date" name = "fecha" id = "fecha" >
-    <button type="button" class="Fecha1 botonAyuda"><i class="fas fa-question-circle icono"></i></button>
-</div>
+		<div class="row ml-3" style="" id="container">
+			<label for = "municipio">Municipio</label>
+			<select class="ml-2" id = "municipio" name = "municipio">
+				<option value = "tijuana">Tijuana</option>
+				<option value = "tecate">Tecate</option>
+				<option value = "mexicali">Mexicali</option>
+				<option value = "rosarito">Rosarito</option>
+				<option value = "ensenada">Ensenada</option>
+			</select>
+			<button type="button" class="Ayuda botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
+    	<br>
+
+		<div class="row ml-3"  id="container">
+			<label for = "fecha">Fecha</label>
+			<input class =  "camponecesario ml-2" type = "date" name = "fecha" id = "fecha" >
+			<button type="button" class="Fecha1 botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
   <br><br>
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --  Seccion del vendedor --  --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
-	<section class = "vendedor">
-    <label for = "cantidad-de-vendedores">Cantidad de vendedores</label>
-      <input type = "number"  name = "cantidaddevendedores" id = "cantidad-de-vendedores" value = "1" min = "1" max = "2" size = "3">
-    <br>
+	<section class = "vendedor Inputs1">
+	<div class="row">
+    	<label for = "cantidad-de-vendedores">Cantidad de vendedores </label>
+      	<input class="ml-2" type = "number"   name = "cantidaddevendedores" id = "cantidad-de-vendedores" value = "1" min = "1" max = "2" size = "3">
+	</div>
+	
     <!-- --><!-- -->
     <!-- --><!-- -->
 
      <section class = "vendedor1">
+		 <hr>
 		 <div class="row">
       <label for = "tipo-de-persona-vendedor1">Tipo de persona</label>
-      <select id = "tipo-de-persona-vendedor1" name = "tipodepersonavendedor1" value ="fisica" >
+      <select id = "tipo-de-persona-vendedor1" name = "tipodepersonavendedor1" value ="fisica" class="ml-2" >
         <option value = "fisica">Fisica</option>
 		<option value = "moral">Moral</option>
       </select>
@@ -65,100 +70,141 @@
       <!-- -->
     <br>
       <section class = "VF1">
+		<div class="row">
         <label for = "VF1nombre">Nombre</label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario uppercase" type = "text" name = "VF1nombre" id = "VF1-nombre"   onkeypress="return SoloLetras(event)" onpaste="return false">
+          <input class =  "camponecesario uppercase ml-2" type = "text" name = "VF1nombre" id = "VF1-nombre"   onkeypress="return SoloLetras(event)" onpaste="return false">
         <br>
-        <label class =  "camponecesario" >Genero</label>
-        <input type="radio" name="VF1genero" id="VF1-m" value="m" checked>
-          <label for="VF1-m">M</label>
-        <input type="radio" name="VF1genero" id="VF1-h" value="h">
-          <label for="VF1-h">H</label>
+		</div>
+		<div class="row">
+
+			<label class =  "camponecesario" >Genero</label>
+			<input type="radio" name="VF1genero" id="VF1-m" value="m" class="ml-2 mt-2" checked>
+			<label for="VF1-m" class="ml-2">M</label>
+			<input type="radio" name="VF1genero" id="VF1-h" value="h" class="ml-2 mt-2">
+			<label for="VF1-h" class="ml-2">H</label>
 		<br>
+		</div>
 		<div class="row">
 		  	<label for = "VF1Direccion">Direccion</label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-         	<input class =  "camponecesario" type = "text" name = "VF1Direccion" id = "VF1Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
+         	<textarea rows="3" cols="40" class = "camponecesario ml-2" type = "text" name = "VF1Direccion" id = "VF1Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+			 
 			<button type="button" class="DVendedor botonAyuda"><i class="fas fa-question-circle icono"></i></button>
 		</div>
       </section>
       <!-- --><!-- -->
       <!-- --><!-- -->
       <section class = "VM1">
-        <label for = "VM1nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario combrecomprador uppercase" type = "text" name = "VM1nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM1-nombre" min = "3" max = "50"  >
-        <br>
-        <label class =  "camponecesario" >Constituido mediante: </label>
-        <input type="radio" name="VM1creacion" id="VM1-escritura" value="escritura" checked>
-          <label for="escritura">Escritura</label>
-        <input type="radio" name="VM1creacion" id="VM1-poliza" value="poliza">
-          <label for="VM1-poliza">Poliza      </label>
-        <br>
-        <label for = "VM1-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros--> <!--onkeypress="return SoloNumeros(event)"-->
-          <input class ="camponecesario" type ="number" name="VM1numero" onkeypress="return SoloNumeros(event)"  id ="VM1-numero"  >
-        <br>
-        <label for = "VM1fecha">Fecha</label>
-        <input class =  "camponecesario" type = "date" name = "VM1fecha" id = "VM1-fecha" >
-        <br>
-        <label for = "VM1nombrerepresentante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario uppercase" type = "text" name = "VM1nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM1-nombre-representante" min = "3" max = "50"  >
+		<div class="row">
+			<label for = "VM1nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
+			<input class =  "camponecesario combrecomprador uppercase ml-2" type = "text" name = "VM1nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM1-nombre" min = "3" max = "50"  >
+			<br>
+		</div>
+		<div class="row">
+			<label class =  "camponecesario" >Constituido mediante: </label>
+		</div>
+		<div class="row">
+			<input class="ml-2 mt-2" type="radio" name="VM1creacion" id="VM1-escritura" value="escritura" checked>
+			<label class="ml-2" for="escritura">Escritura</label>
+			<input class="ml-2 mt-2" type="radio" name="VM1creacion" id="VM1-poliza" value="poliza">
+			<label class="ml-2" for="VM1-poliza">Poliza      </label>
+			<br>
+		</div>
+		<div class="row">
+			<label for = "VM1-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros--> <!--onkeypress="return SoloNumeros(event)"-->
+			<input class ="camponecesario ml-2" type ="number" name="VM1numero" onkeypress="return SoloNumeros(event)"  id ="VM1-numero"  >
+			
+		</div>
 		<br>
-		<label for = "VM1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario" type = "text" name = "VM1Direccion" id = "VM1Direccion" onkeypress="return SoloLetras(event)" onpaste="return false">
-
+		<div class="row">
+			<label for = "VM1fecha">Fecha</label>
+			<input class =  "camponecesario ml-2" type = "date" name = "VM1fecha" id = "VM1-fecha" >
+			
+		</div>
+		<br>
+		<div class="row">
+			<label for = "VM1nombrerepresentante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
+			<input  class =  "camponecesario uppercase ml-2" type = "text" name = "VM1nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM1-nombre-representante" min = "3" max = "50"  >
+			
+		</div>
+		<br>
+		<div class="row">
+			<label for = "VM1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+			<textarea rows="3" cols="42" class =  "camponecesario ml-2" type = "text" name = "VM1Direccion" id = "VM1Direccion" onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+		</div>
 	   </section>
-        <br>
+      
       <!-- -->
       <br>
      </section>
        <section class = "vendedor2">
-      <label for = "tipo-de-persona-vendedor2">Tipo de persona</label>
-      <select id = "tipo-de-persona-vendedor2" name = "tipodepersonavendedor2" value ="Moral" >
-        <option value = "fisica">Fisica</option>
-		<option value = "moral">Moral</option>
-		<br>
-
-      </select>
-          <button type="button" class="TPersona botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		<hr>
+		<div class="row">
+			<label for = "tipo-de-persona-vendedor2">Tipo de persona</label>
+			<select class="ml-2" id = "tipo-de-persona-vendedor2" name = "tipodepersonavendedor2" value ="Moral" >
+				<option value = "fisica">Fisica</option>
+				<option value = "moral">Moral</option>
+			</select>
+        	<button type="button" class="TPersona botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+			<br>
+		</div>
       <!-- -->
       <!-- -->
       <br>
       <section class = "VF2">
-        <label for = "VF2-nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario uppercase" type = "text" name = "VF2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VF2-nombre">
-        <br>
+		<div class="row">
+			<label for = "VF2-nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
+			<input class =  "camponecesario uppercase" type = "text" name = "VF2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VF2-nombre">
+        </div>
+		
+		<div class="row">
         <label class =  "camponecesario" >Genero</label>
-        <input type="radio" name="VF2genero" id="VF2-m" value="m" checked>
-          <label for="VF2-m">M</label>
-        <input type="radio" name="VF2genero" id="VF2-h" value="h">
-          <label for="VF2-h">H</label>
-		<br>
-		<label for = "VF2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario" type = "text" name = "VF2Direccion" id = "VF2Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false">
-    <button type="button" class="DVendedor"><i class="fas fa-question-circle icono"></i></button>
+        <input class="ml-2 mt-2" type="radio" name="VF2genero" id="VF2-m" value="m" checked>
+          <label class="ml-2" for="VF2-m">M</label>
+        <input class="ml-2 mt-2" type="radio" name="VF2genero" id="VF2-h" value="h">
+          <label ml-2 for="VF2-h">H</label>
+		</div>
+		<div class="row">
+			<label for = "VF2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+			<textarea rows="3" cols="40" class = "camponecesario ml-2" type = "text" name = "VF2Direccion" id = "VF2Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+			<button type="button" class="DVendedor botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
       </section>
       <!-- --><!-- -->
       <!-- --><!-- -->
       <section class = "VM2">
-        <label for = "VM2-nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario combrecomprador uppercase" type = "text"  onkeypress="return SoloLetras(event)" onpaste="return false" name = "VM2nombre" id = "VM2-nombre" min = "3" max = "50" >
+		  <div class="row">
+			<label for = "VM2-nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
+			<input class =  "camponecesario combrecomprador uppercase ml-2" type = "text"  onkeypress="return SoloLetras(event)" onpaste="return false" name = "VM2nombre" id = "VM2-nombre" min = "3" max = "50" >
+		</div>
+		<div class="row">
+        	<label class =  "camponecesario" >Constituido mediante: </label>
+		</div>
+		<div class="row">
+			<input class="ml-2 mt-2" type="radio" name="creacion" id="VM2-escritura" value="escritura" checked>
+				<label class="ml-2"  for="VM2-escritura">Escritura</label>
+			<input class="ml-2 mt-2"  type="radio" name="creacion" id="VM2-poliza" value="poliza">
+				<label class="ml-2" for="VM2-poliza">Poliza      </label>
+		</div>
         <br>
-        <label class =  "camponecesario" >Constituido mediante: </label>
-        <input type="radio" name="creacion" id="VM2-escritura" value="escritura" checked>
-          <label for="VM2-escritura">Escritura</label>
-        <input type="radio" name="creacion" id="VM2-poliza" value="poliza">
-          <label for="VM2-poliza">Poliza      </label>
-        <br>
-        <label for = "VM2-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros-->
-          <input class =  "camponecesario" type = "text" name = "VM2numero" onkeypress="return SoloNumeros(event)" id = "VM2-numero" min = "5" max = "5"  >
-        <br>
-        <label for = "VM2-fecha">Fecha</label>
-        <input class =  "camponecesario" type = "date" name = "VM2fecha" id = "VM2-fecha" >
-        <br>
-        <label for = "VM2-nombre-representante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario uppercase" type = "text" name = "VM2nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM2-nombre-representante" min = "3" max = "50" >
+		<div class="row">
+        	<label for = "VM2-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros-->
+          	<input class = "camponecesario ml-2" type = "text" name = "VM2numero" onkeypress="return SoloNumeros(event)" id = "VM2-numero" min = "5" max = "5"  >
+        </div>
 		<br>
-		<label for = "VM2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-          <input class =  "camponecesario" type = "text" name = "VM2Direccion" id = "VM2Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false">
-
+		<div class="row">
+			<label for = "VM2-fecha">Fecha</label>
+			<input class =  "camponecesario ml-2" type = "date" name = "VM2fecha" id = "VM2-fecha" >
+		</div>
+        <br>
+		<div class="row">
+        <label for = "VM2-nombre-representante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
+          <input class =  "camponecesario uppercase ml-2" type = "text" name = "VM2nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "VM2-nombre-representante" min = "3" max = "50" >
+		</div>
+		<br>
+		<div class="row">
+			<label for = "VM2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+			<textarea rows="3" cols="42" class =  "camponecesario ml-2" type = "text" name = "VM2Direccion" id = "VM2Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+	   	</div>
 	   </section>
 			<br>
 		<!-- -->
@@ -170,113 +216,152 @@
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --  Seccion del comprador --  --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
-	<section class = "comprador">
+	<section class = "comprador Inputs1">
 	<!-- -->
-	<label for = "cantidad-de-compradores">Cantidad de compradores</label>
-	<input type = "number" name = "cantidaddecompradores" id = "cantidad-de-compradores" value = "1" min = "1" max = "2" size = "3" >
+	<div class="row">
+		<label for = "cantidad-de-compradores">Cantidad de compradores</label>
+		<input class="ml-2" type = "number" name = "cantidaddecompradores" id = "cantidad-de-compradores" value = "1" min = "1" max = "2" size = "3" >
+	</div>
 	<!--<select name = "cantidad-de-compradores" id = "cantidad-de-compradores">-->
-	<br>
+	<hr>
 	<!-- -->
 	<!-- -->
-	<section class = comprador1>
+	<section class = "comprador1">
 	<!-- -->
-		<label for = "tipo-de-persona-comprador1">Tipo de persona</label>
-		<select id = "tipo-de-persona-comprador1" name = "tipodepersonacomprador1">
-			<option value = "fisica">Fisica</option>
-			<option value = "moral">Moral</option>
-		</select>
-        <button type="button" class="TPersona"><i class="fas fa-question-circle icono"></i></button>
+		<div class="row">
+			<label for = "tipo-de-persona-comprador1">Tipo de persona</label>
+			<select class="ml-2" id = "tipo-de-persona-comprador1" name = "tipodepersonacomprador1">
+				<option value = "fisica">Fisica</option>
+				<option value = "moral">Moral</option>
+			</select>
+			<button type="button" class="TPersona botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
 		<!-- -->
 		<!-- -->
-		<section class = CM1>
-		<br>
+		<section class = "CM1">
+			<br>
+			<div class="row">
 				<label for = "CM1-nombre">Nombre</label><!-- Onkeypress llama a la funcion SoloLetras-->
-			<input class =  "camponecesario combrecomprador" type = "text" name = "CM1nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM1-nombre" min = "3" max = "50"  >
+				<input class =  "camponecesario combrecomprador ml-2" type = "text" name = "CM1nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM1-nombre" min = "3" max = "50"  >
+				
+			</div>
+			<div class="row">
+				<label class =  "camponecesario" >Constituido mediante: </label>
+			</div>
+			<div class="row">
+				<input class="ml-2 mt-2" type="radio" name="CM1creacion" id="CM1-escritura" value="escritura" checked>
+				<label class="ml-2" for="CM1-escritura">Escritura</label>
+				<input class="ml-2 mt-2" type="radio" name="CM1creacion" id="CM1-poliza" value="poliza">
+				<label class="ml-2" for="CM1-poliza">Poliza      </label>
+			</div>
+			<div class="row">
+				<label for = "CM1-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros-->
+				<input class =  "camponecesario ml-2" type = "text" name = "CM1numero" onkeypress="return SoloNumeros(event)" id = "CM1-numero" min = "5" max = "5" >
+			</div>
 			<br>
-			<label class =  "camponecesario" >Constituido mediante: </label>
-			<input type="radio" name="CM1creacion" id="CM1-escritura" value="escritura" checked>
-			<label for="CM1-escritura">Escritura</label>
-			<input type="radio" name="CM1creacion" id="CM1-poliza" value="poliza">
-			<label for="CM1-poliza">Poliza      </label>
+			<div class="row">
+				<label for = "CM1-fecha">Fecha</label>
+				<input class =  "camponecesario ml-2" type = "date" name = "CM1fecha" id = "CM1-fecha" >
+			</div>
 			<br>
-			<label for = "CM1-numero">Numero</label><!-- Onkeypress llama a la funcion SoloNumeros-->
-			<input class =  "camponecesario" type = "text" name = "CM1numero" onkeypress="return SoloNumeros(event)" id = "CM1-numero" min = "5" max = "5" >
+			<div class="row">
+				<label for = "CM1-nombre-representante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
+				<input class =  "camponecesario ml-2" type = "text" name = "CM1nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM1-nombre-representante" min = "3" max = "50"  >
+			</div>
 			<br>
-			<label for = "CM1-fecha">Fecha</label>
-			<input class =  "camponecesario" type = "date" name = "CM1fecha" id = "CM1-fecha" >
-			<br>
-			<label for = "CM1-nombre-representante">Nombre del representante</label><!-- Onkeypress llama a la funcion SoloLetras-->
-			<input class =  "camponecesario" type = "text" name = "CM1nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM1-nombre-representante" min = "3" max = "50"  >
-			<br>
-			<label for = "CM1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-        	<input class =  "camponecesario" type = "text" name = "CM1Direccion" id = "CM1Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false">
-
+			<div class="row">
+				<label for = "CM1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+				<textarea rows="3" cols="42" class =  "camponecesario ml-2" type = "text" name = "CM1Direccion" id = "CM1Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+			</div>
 		</section>
-			<section class = CF1>
-					<br>
-			<label for = "CF1-nombre">Nombre</label>
-				<input class =  "camponecesario" type = "text"  onkeypress="return SoloLetras(event)" onpaste="return false" name = "CF1nombre" id = "CF1-nombre" min = "3" max = "50"  >
+		<section class = "CF1">
 			<br>
-			<label class =  "camponecesario" >Sexo / Genero ?</label>
-			<input type="radio" name="CF1genero" id="CF1-m" value="m" checked>
-				<label for="CF1-m">M</label>
-			<input type="radio" name="CF1genero" id="CF1-h" value="h">
-				<label for="CF1-h">H</label>
-			<br>
-			<label for = "CF1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-        	<input class =  "camponecesario" type = "text" name = "CF1Direccion" id = "CF1Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false">
+			<div class="row">
+				<label for = "CF1-nombre">Nombre</label>
+				<input class =  "camponecesario ml-2" type = "text"  onkeypress="return SoloLetras(event)" onpaste="return false" name = "CF1nombre" id = "CF1-nombre" min = "3" max = "50"  >
+			</div>
 
-		 </section>
+			<div class="row">
+				<label class ="camponecesario " >Sexo / Genero </label>
+				<input class="ml-2 mt-2" type="radio" name="CF1genero" id="CF1-m" value="m" checked>
+					<label class="ml-2" for="CF1-m">M</label>
+				<input class="ml-2 mt-2"  type="radio" name="CF1genero" id="CF1-h" value="h">
+					<label class="ml-2"  for="CF1-h">H</label>
+			</div>
+			<div class="row">
+				<label for = "CF1Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+				<textarea rows="3" cols="40" class =  "camponecesario ml-2" type = "text" name = "CF1Direccion" id = "CF1Direccion" min = "3" max = "50"   onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+			</div>
+		</section>
 	</section>
-	<br>
-	<br>
-	<section class = comprador2>
-		<label for = "tipo-de-persona-comprador2">Tipo de persona</label>
-		<select id = "tipo-de-persona-comprador2" name = "tipodepersonacomprador2">
-			<option value = "fisica">Fisica</option>
-			<option value = "moral">Moral</option>
-		</select>
-        <button type="button" class="TPersona"><i class="fas fa-question-circle icono"></i></button>
+	
+	
+	<section class = "comprador2">
+		<hr>
+		<div class="row">
+			<label for = "tipo-de-persona-comprador2">Tipo de persona</label>
+			<select class="ml-2" id = "tipo-de-persona-comprador2" name = "tipodepersonacomprador2">
+				<option value = "fisica">Fisica</option>
+				<option value = "moral">Moral</option>
+			</select>
+			<button type="button" class="TPersona botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
 		<br>
 		<!-- -->
 		<!-- -->
-		<section class = CM2>
-			<label for = "CM2-nombre">Nombre</label>
-				<input class =  "camponecesario combrecomprador" type = "text" name = "CM2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM2-nombre" min = "3" max = "50"  >
+		<section class = "CM2">
+			<div class="row">
+				<label for = "CM2-nombre">Nombre</label>
+				<input class =  "camponecesario combrecomprador ml-2" type = "text" name = "CM2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM2-nombre" min = "3" max = "50"  >
+			</div>
+			<div class="row">
+				<label class =  "camponecesario" >Constituido mediante: </label>
+			</div>
+			<div class="row">
+				<input class="ml-2 mt-2" type="radio" name="CM2creacion" id="CM2-escritura" value="escritura" checked>
+					<label class="ml-2" for="CM2-escritura">Escritura</label>
+				<input class="ml-2 mt-2" type="radio" name="CM2creacion" id="CM2-poliza" value="poliza">
+					<label class="ml-2" for="CM2-poliza">Poliza      </label>
+			</div>
+			<div class="row">
+				<label for = "CM2-numero">Numero</label>
+				<input class =  "camponecesario ml-2" type = "text" name = "CM2numero" onkeypress="return SoloNumeros(event)" id = "CM2-numero" min = "5" max = "5"  >
+			</div>
 			<br>
-			<label class =  "camponecesario" >Constituido mediante: </label>
-			<input type="radio" name="CM2creacion" id="CM2-escritura" value="escritura" checked>
-				<label for="CM2-escritura">Escritura</label>
-			<input type="radio" name="CM2creacion" id="CM2-poliza" value="poliza">
-				<label for="CM2-poliza">Poliza      </label>
+			<div class="row">
+				<label for = "CM2-fecha">Fecha</label>
+				<input class =  "camponecesario ml-2" type = "date" name = "CM2fecha" id = "CM2-fecha" >
+			</div>
 			<br>
-			<label for = "CM2-numero">Numero</label>
-				 <input class =  "camponecesario" type = "text" name = "CM2numero" onkeypress="return SoloNumeros(event)" id = "CM2-numero" min = "5" max = "5"  >
-			<br>
-			<label for = "CM2-fecha">Fecha</label>
-			<input class =  "camponecesario" type = "date" name = "CM2fecha" id = "CM2-fecha" >
-			<br>
-			<label for = "CM2-nombre-representante">Nombre del representante</label>
-				<input class =  "camponecesario" type = "text" name = "CM2nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM2-nombre-representante" min = "3" max = "50" >
+			<div class="row">
+				<label for = "CM2-nombre-representante">Nombre del representante</label>
+				<input class =  "camponecesario ml-2" type = "text" name = "CM2nombrerepresentante"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CM2-nombre-representante" min = "3" max = "50" >
 				<br>
-			<label for = "CM2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-        	<input class =  "camponecesario" type = "text" name = "CM2Direccion" id = "CM2Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
-
+			</div>
+			<br>
+			<div class="row">
+				<label for = "CM2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+				<textarea rows="3" cols="42" class =  "camponecesario ml-2" type = "text" name = "CM2Direccion" id = "CM2Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+			</div>
 		</section>
 		<!-- -->
-		<section class = CF2>
-
-			<label for = "CF2-nombre">Nombre</label>
-				<input class =  "camponecesario" type = "text" name = "CF2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CF2-nombre" min = "3" max = "50"  >
+		<section class = "CF2">
+			<div class="row">
+				<label for = "CF2-nombre">Nombre</label>
+				<input class =  "camponecesario ml-2" type = "text" name = "CF2nombre"  onkeypress="return SoloLetras(event)" onpaste="return false" id = "CF2-nombre" min = "3" max = "50"  >
+			</div>
 			<br>
-			<label class =  "camponecesario" >Sexo / Genero ?</label>
-			<input type="radio" name="CF2genero" id="CF2-m" value="m" checked>
-				<label for="CF2-m">M</label>
-			<input type="radio" name="CF2genero" id="CF2-h" value="h">
-				<label for="CF2-h">H</label>
-			<br>
-			<label for = "CF2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
-        	<input class =  "camponecesario" type = "text" name = "CF2Direccion" id = "CF2Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false">
+			<div class="row">
+				<label class =  "camponecesario" >Sexo / Genero ?</label>
+					<input class="ml-2 mt-2" type="radio" name="CF2genero" id="CF2-m" value="m" checked>
+					<label class="ml-2"  for="CF2-m">M</label>
+					<input class="ml-2 mt-2"  type="radio" name="CF2genero" id="CF2-h" value="h">
+					<label class="ml-2"  for="CF2-h">H</label>
+			</div>
+			<div class="row">
+				<label for = "CF2Direccion">Direccion </label>                                                                                               <!-- Onkeypress llama a la funcion SoloLetras-->
+				<textarea rows="3" cols="42" class =  "camponecesario" type = "text" name = "CF2Direccion" id = "CF2Direccion"  onkeypress="return SoloLetras(event)" onpaste="return false"></textarea>
+		 	</div>
 		 </section>
 	</section>
 	<br>
@@ -287,29 +372,33 @@
 	<!-- --><!-- parte2--><!-- parte2--><!--parte2 --><!--parte2 --><!--parte2 --><!--parte2 --><!-- parte2--><!--parte2 --><!-- --><!-- --><!-- -->
 	<!-- --><!-- parte2--><!-- parte2--><!--parte2 --><!--parte2 --><!--parte2 --><!--parte2 --><!-- parte2--><!--parte2 --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
-	<section class = "parte2">
-    <button type="button" class="CVarticulo"><i class="fas fa-question-circle icono"></i></button>
-	<label for = "Tipo-de-objeto">Compra/venta de: </label>
-	<select id = "Tipo-de-objeto" name = "Tipodeobjeto" value ="Veiculo" >
-			<option value = "Veiculo">Vehiculo</option>
-			<option value = "...">...</option>
-			<option value = "...">...</option>
-		</select><br><br>
-
-	<section class = objetoVeiculo>
-
-		<label for="Vehiculo-Tipo">Tipo: </label>
-		<input list="Vehiculos-Tipos" name="VehiculoTipo" id="Vehiculo-Tipo">
-
-		<datalist id="Vehiculos-Tipos">
-			<option value="Vagoneta">
-			<option value="Motocicleta">
-			<option value="...">
-			<option value="...">
-			<option value="...">
-		</datalist>
-        <button type="button" class="TAuto"><i class="fas fa-question-circle icono"></i></button>
+	<section class = "parte2 ">
+    	<div class="row">
+			<label for = "Tipo-de-objeto">Compra/venta de: </label>
+			<select class="ml-2" id = "Tipo-de-objeto" name = "Tipodeobjeto" value ="Veiculo" >
+				<option value = "Veiculo">Vehiculo</option>
+				<option value = "...">...</option>
+				<option value = "...">...</option>
+			</select>
+			<button type="button" class="CVarticulo botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
 		<br><br>
+
+	<section class = "objetoVeiculo Inputs1">
+		<div class="row">
+			<label for="Vehiculo-Tipo">Tipo: </label>
+			<input class="ml-2"  list="Vehiculos-Tipos" name="VehiculoTipo" id="Vehiculo-Tipo">
+
+			<datalist id="Vehiculos-Tipos">
+				<option value="Vagoneta">
+				<option value="Motocicleta">
+				<option value="...">
+				<option value="...">
+				<option value="...">
+			</datalist>
+			<button type="button" class="TAuto botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+		</div>
+		<br>
 
 		<!--
 		<label for = "VeiculoTipo">Tipo: </label>
@@ -320,18 +409,20 @@
 			</select>
 		<br>
 		-->
-		<label for="VehiculoMarca">Marca: </label>
-		<input list="Vehiculos-Marcas" name="VehiculoMarca" id="VehiculoMarca">
+		<div class="row">
+			<label for="VehiculoMarca">Marca: </label>
+			<input class="ml-2" list="Vehiculos-Marcas" name="VehiculoMarca" id="VehiculoMarca">
 
-		<datalist id="Vehiculos-Marcas">
-			<option value="Nissan">
-			<option value="Toyota">
-			<option value="Honda">
-			<option value="...">
-			<option value="...">
-		</datalist>
-		<br><br>
-
+			<datalist id="Vehiculos-Marcas">
+				<option value="Nissan">
+				<option value="Toyota">
+				<option value="Honda">
+				<option value="...">
+				<option value="...">
+			</datalist>
+			
+		</div>
+		<br>
 		<!--
 		<label for = "VehiculoMarca">Marca: </label>
 			<select id = "VeiculoTipo" name = "VeiculoTipo" value ="Veiculo" >
@@ -342,30 +433,42 @@
 			</select>
 		<br>
 		-->
-
+		<div class="row">
 			<label for = "VehiculoModelo">Modelo: </label>
-				<input class =  "camponecesario" type = "text" name = "VehiculoModelo" id = "VehiculoModelo" min = "3" max = "50"  >
-			<br><br>
+			<input class =  "camponecesario ml-2" type = "text" name = "VehiculoModelo" id = "VehiculoModelo" min = "3" max = "50"  >
+		</div>
+		<br>
+		<div class="row">
 			<label for = "Numero-ID-Veicular">Numero de identificacion vehicular: </label>
-				<input class =  "camponecesario" type = "text" name = "NumeroIDVeicular" id = "Numero-ID-Veicular" min = "3" max = "500"  >
-			<br><br>
+			</div>
+		<div class="row">
+			<textarea rows="1" cols="50" class =  "camponecesario ml-2" type = "text" name = "NumeroIDVeicular" id = "Numero-ID-Veicular" min = "3" max = "500"  ></textarea>
+		</div>
+		<br>
+		<div class="row">
 			<label for = "Placas-de-circulacion">Placas de circulacion: </label>
-				<input class =  "camponecesario" type = "text" name = "Placasdecirculacion" id = "Placas-de-circulacion" >
-			<br><br>
+			<input class = "camponecesario ml-2" type = "text" name = "Placasdecirculacion" id = "Placas-de-circulacion" >
+		</div>
+		<br>
+		<div class="row">
 			<label for = "VehiculoAdquiridoDe">Adquirido de: </label>
-				<input class =  "camponecesario" type = "text" name = "VehiculoAdquiridoDe" id = "VehiculoAdquiridoDe" min = "3" max = "500"  >
-<button type="button" class="Adquirido"><i class="fas fa-question-circle icono"></i></button>
-      <br><br>
+			<input class = "camponecesario ml-2" type = "text" name = "VehiculoAdquiridoDe" id = "VehiculoAdquiridoDe" min = "3" max = "500"  >
+			<button type="button" class="Adquirido botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+      	</div>
+		<br>
+		<div class="row">
 
 			<label for = "fechaAdquirido">En la fecha: </label>
-				<input class =  "camponecesario" type = "date" name = "fechaAdquirido" id = "fechaAdquirido" >
-<button type="button" class="Fadquirido"><i class="fas fa-question-circle icono"></i></button>
-      <br><br>
-
+				<input class =  "camponecesario ml-2" type = "date" name = "fechaAdquirido" id = "fechaAdquirido" >
+				<button type="button" class="Fadquirido botonAyuda"><i class="fas fa-question-circle icono"></i></button>
+      	</div>
+		<br>
+		<div class="row">
 			<label for = "VehiculoDescripcion">Descripcion adicional: </label>
-				<input class =  "camponecesario" type = "text" name = "VehiculoDescripcion" id = "VehiculoDescripcion" min = "3" max = "500"  >
-			<br>
-	<br><br>
+			<textarea rows="3" cols="42" class =  "camponecesario ml-2" type = "text" name = "VehiculoDescripcion" id = "VehiculoDescripcion" min = "3" max = "500"  ></textarea>
+			
+		</div>
+	<br>
 	</section>
 	</section>
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
@@ -373,39 +476,48 @@
 	<!-- --><!-- parte3--><!-- parte3--><!--parte3 --><!--parte3 --><!--parte3 --><!--parte3 --><!-- parte3--><!--parte3 --><!-- --><!-- --><!-- -->
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 	<section class = "parte3">
-	<br>
-	<label for = "TdeCirculacion">Documentos entregados: </label>
-	<br>
-	<input type="checkbox" id="TdeCirculacion" name="TdeCirculacion" value="Bike" checked>
-	<label for="TdeCirculacion"> Tarjeta de circulación </label><br>
+		<br>
+		<div class="Inputs1">
+			<div class="row">
+				<label for = "TdeCirculacion">Documentos entregados: </label>
+			</div>
+			<br>
+			
+			<input type="checkbox" id="TdeCirculacion" name="TdeCirculacion" value="Bike" checked>
+			<label for="TdeCirculacion"> Tarjeta de circulación </label><br>
 
-	<input type="checkbox" id="Factura" name="Factura" value="Car">
-	<label for="Factura"> Factura </label><br>
+			<input type="checkbox" id="Factura" name="Factura" value="Car">
+			<label for="Factura"> Factura </label><br>
 
-	<input type="checkbox" id="Pedimento" name="Pedimento" value="Boat">
-	<label for="Pedimento"> Pedimento de importación </label><br>
-	<br>
-
-	<label for = "DomicilioDelPago">Lugar  o domicilio del pago: </label>
-				<input class =  "camponecesario" type = "text" name = "DomicilioDelPago" id = "DomicilioDelPago">
+			<input type="checkbox" id="Pedimento" name="Pedimento" value="Boat">
+			<label for="Pedimento"> Pedimento de importación </label><br>
 			<br>
 
-	<label for = "Precio">Precio: </label>
-				<input class =  "camponecesario" type = "text" name = "Precio" id = "Precio">
+			<label for = "DomicilioDelPago">Lugar  o domicilio del pago: </label>
+			<div>
+				<textarea cols="50" rows="3" class =  "camponecesario" type = "text" name = "DomicilioDelPago" id = "DomicilioDelPago"></textarea>
+			</div>
 			<br>
-	<label for = "PrecioLetra">Precio en letra: </label>
-				<input class =  "camponecesario" type = "text" name = "PrecioLetra" id = "PrecioLetra">
-			<br>
+			<label for = "Precio">Precio: </label>
+						<input class =  "camponecesario" type = "text" name = "Precio" id = "Precio">
+					<br>
+			<label for = "PrecioLetra">Precio en letra: </label>
+						<input class =  "camponecesario" type = "text" name = "PrecioLetra" id = "PrecioLetra">
+					<br>
 
-	<label class =  "camponecesario" >Metodo de pago: </label>
-			<input type="radio" name="MetodoPago" id="Metodo-Pago-Efectivo" value="Efectivo" checked>
+			<label class =  "camponecesario" >Metodo de pago: </label>
+				<input type="radio" name="MetodoPago" id="Metodo-Pago-Efectivo" value="Efectivo" checked>
 				<label for="Metodo-Pago-Efectivo"> Efectivo </label>
-			<input type="radio" name="MetodoPago" id="Metodo-Pago-Cheque" value="Cheque">
+
+				<input type="radio" name="MetodoPago" id="Metodo-Pago-Cheque" value="Cheque">
 				<label for="Metodo-Pago-Cheque"> Cheque </label>
-			<input type="radio" name="MetodoPago" id="Metodo-Pago-Otro" value="">
+
+				<input type="radio" name="MetodoPago" id="Metodo-Pago-Otro" value="">
 				<label for="Metodo-Pago-Otro"> Otro </label>
+
+				
 			<br>
-	<br><br><br>
+		</div>
 	</section>
 
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
@@ -414,10 +526,14 @@
 	<!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
 
 		<br>
-		<button class = "Prev btn btn-warning" type = "button" value = "Prev"><i class="fas fa-arrow-left"></i> Anterior</button>
-		<button class = "Next btn btn-success" type = "button" value = "Next">Siguiente <i class="fas fa-arrow-right"></i></button>
-		<button class = "Nuevo btn btn-info" type = "button" value = "Nuevo"><i class="fas fa-plus"></i> Nuevo contrato</button>
-		<button class = "Generar btn btn-danger" type = "submit" value = "Generar PDF"><i class="fas fa-file-pdf"></i> Generar PDF</button>
+		<div class="row text-center d-flex justify-content-center">
+			<button class = "Prev btn btn-warning btn-lg mx-2" type = "button" value = "Prev"><i class="fas fa-arrow-left"></i> Anterior</button>
+			<button class = "Next btn btn-success btn-lg" type = "button" value = "Next">Siguiente <i class="fas fa-arrow-right"></i></button>
+			<button class = "Nuevo btn btn-info btn-lg" type = "button" value = "Nuevo"><i class="fas fa-plus"></i> Nuevo contrato</button>
+			<button class = "Generar btn btn-danger btn-lg" type = "submit" value = "Generar PDF"><i class="fas fa-file-pdf"></i> Generar PDF</button>
+			
+		</div>
+		<hr>
 	</form>
 	</section>
 
@@ -432,7 +548,7 @@
 			<div>
 			<!-- <h5 class="p1">Vista Previa</h5> -->
 			<h2 class = "previa">Ultimo contrato generado       </h2>
-		<embed class="p1" id="vistaPrevia" src="/static/pdf/Contrato.pdf" type="application/pdf" width="700" height="800" />
+		<embed class="p1" id="vistaPrevia" src="/static/pdf/Contrato.pdf" type="application/pdf" width="635" height="750" />
 		</div>
 	</section>
 

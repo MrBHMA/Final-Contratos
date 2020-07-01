@@ -1,9 +1,11 @@
 .navbar{  
-	background: #5161ce;
-	background: radial-gradient(circle, #5161ce 0%, #6974c0 100%);
-	box-shadow: 3px 0px 1px black ;
-	padding-bottom: 20px;
-	height: 80px;
+	
+	width: 100%;
+	background: Salmon;
+	background: radial-gradient(circle, rgb(255, 138, 125) 0%, rgb(255, 182, 98) 100%);
+	box-shadow: 2px 1px 5px black ;
+	height: 70px;
+	padding-bottom: 15px;
   }
   .nav-link:hover{
 	font-size:xx-large;
@@ -15,4 +17,16 @@
   }
   .navtext{
 	color: white;
+  }
+
+  /* FOOTER */
+  .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color:rgb(255, 182, 98);
+	color: black;
+	text-align: center;
+	box-shadow: 1px 1px 5px black;
+	margin-top: 50px;
   }
