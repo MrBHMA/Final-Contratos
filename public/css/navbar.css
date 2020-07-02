@@ -5,7 +5,7 @@
 	background: radial-gradient(circle, rgb(255, 138, 125) 0%, rgb(255, 182, 98) 100%);
 	box-shadow: 2px 1px 5px black ;
 	height: 15%;
-	padding-bottom: 15px;
+	padding-bottom: 16px;
   }
   .nav-link:hover{
 	font-size:xx-large;
