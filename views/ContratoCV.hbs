@@ -4,7 +4,7 @@
 <div class="Funcion">
 	<h3>Nuevo Contrato <h3>
 	<h2>Formato de contratos</h2>
-	<p class = "instrucciones">Instrucciones: Ingresa los datos requeridos y da clic en siguiente</p>
+	<p id = "instrucciones">Instrucciones: Ingresa los datos requeridos y da clic en siguiente</p>
 
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,7 +16,6 @@
  <form action="/contrato" method="POST">
 
   <section class = "campos left">
-	<p>Ingresa Los datos</p>
 	<section class = "parte1">
 
 		<div class="row ml-3">
@@ -880,7 +879,9 @@ const OtroMetododoPago = document.querySelector('#otroMetodoPago')
 const OtroMetododoPagodiv = document.getElementsByClassName('otro-Metodo-Pago')
 FunShoworHideOtro();
 
-// Asignar la parte que usaremos para actualizar el texto (esta al final del HTML)
+// Asignar la parte que usaremos para actualizar el texto (esta al final del HTML) y las instrucciones (al inicio)
+const instrucciones = document.querySelector('#instrucciones')
+
 const primerParrafo = document.querySelector('#primerParrafo')
 
 const PrimerDeclaracion = document.querySelector('#PrimerDeclaracion')
@@ -912,6 +913,25 @@ const generar = document.querySelector('.Generar')
 generar.style.display  =  'none';
 
 
+ function FunActualizaInstrunciones(){
+	instrucciones.innerHTML = "";
+	if (ParteActual === 0){
+		instrucciones.innerHTML = "";
+	}
+	else if (ParteActual === 1){
+		instrucciones.innerHTML = "Ingresa la información de los compradores y vendedores involucrados.";
+	}
+	else if (ParteActual === 2){
+		instrucciones.innerHTML = "Ingresa la información del objeto de venta.";
+	}
+	else if (ParteActual === 3){
+		instrucciones.innerHTML = "Ingresa los detalles de la transacción.";
+	}
+	else if (ParteActual === 4){
+		instrucciones.innerHTML = "Revisa que los datos ingresados sean correctos. Despues da click en generar PDF.";
+	}
+}
+FunActualizaInstrunciones();
 MetodoEfectivo.onclick = function(){
 	FunShoworHideOtro();
 }
@@ -939,16 +959,14 @@ nuevo.onclick = function(){
 	next.style.display = 'inline';
 	prev.style.display = 'inline';
 	nuevo.style.display  =  'none';
+	FunActualizaInstrunciones();
 }
 
 	//	// BOTON NEXT //	//
 
 next.onclick = function(){
-
 	if (ParteActual === 1){ //Si es la primera parte revisar que los campos tengan informacion
 		listo = true;
-
-		console.log('algo');
 		if(fecha.value === '') {
 		listo = false;
 		fecha.style.background = 'pink';
@@ -1394,7 +1412,7 @@ next.onclick = function(){
 			UltimoParrafo.innerHTML = "Leído que fue a las partes el presente contrato, anexando como apéndice los documentos mencionados en la declaración I, y copia simple de sus identificaciones oficiales, ante la presencia de dos testigos, proceden a firmar dos ejemplares del mismo.";
 		}
 	}
-
+	FunActualizaInstrunciones();
 }
 
 	//	// BOTON PREV //	//
@@ -1431,7 +1449,7 @@ prev.onclick = function(){
 			document.getElementsByClassName('PDFsection')[0].style.display  =  'none';
 			FunShoworHideOtro();
 	}
-
+	FunActualizaInstrunciones();
 
 }
 
@@ -1500,5 +1518,11 @@ function SoloLetras(e) {
     $('.Adquirido').popover({title: "Adquirido de", content: "Escribe de donde se obtuvo el vehiculo a vender", trigger: "hover"});
     $('.Fadquirido').popover({title: "Fecha de adquisicion", content: "Escoge la fecha en la cual se adquirio el vehiculo de la compra-venta", trigger: "hover"});
   });
+
+	Swal.fire({
+		title:"Alerta",
+		text:"Algunos campos están vacíos ",
+		icon:"warning"
+	})
 
 </script>
