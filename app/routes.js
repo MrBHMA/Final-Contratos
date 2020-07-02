@@ -144,6 +144,7 @@ app.post('/contrato', (req,res)=>{
     var VehiculoModelo =req.body.VehiculoModelo
     var NumeroIDVeicular = req.body.NumeroIDVeicular
     var placasDeCirculacion= req.body.Placasdecirculacion
+    var placasNacOFront= req.body.placasNacOFront
     var VehiculoAdquiridoDe=req.body.VehiculoAdquiridoDe
     var fechaAdquirido = req.body.fechaAdquirido
     var VehiculoDescripcion = req.body.VehiculoDescripcion
@@ -262,8 +263,16 @@ app.post('/contrato', (req,res)=>{
         primerParrafo = primerParrafo + ", convienen celebrar un contrato de compraventa al tenor de las siguientes declaraciones y clausulas:";
 		
         PrimerDeclaracion = "I.- Declara el “VENDEDOR” ser el legítimo propietario de un " + tipoDeObjeto + " tipo " + VehiculoTipo + 
-			", marca " + VehiculoMarca + ", modelo " + VehiculoModelo + ", placas de circulación nacionales " + placasDeCirculacion +
-			" " + VehiculoDescripcion +	"con número de identificación vehicular " + NumeroIDVeicular + " mismo que adquirió de " + VehiculoAdquiridoDe + " el " + fechaAdquirido;
+            ", marca " + VehiculoMarca + ", modelo " + VehiculoModelo;
+        if (placasNacOFront == "Nacionales"){
+            PrimerDeclaracion = PrimerDeclaracion + ", placas de circulación nacionales " ;
+        }
+        else {
+            PrimerDeclaracion = PrimerDeclaracion + ", placas fronterizas " ;
+        }
+            
+        PrimerDeclaracion = PrimerDeclaracion + placasDeCirculacion +
+			", " + VehiculoDescripcion +	", con número de identificación vehicular " + NumeroIDVeicular + " mismo que adquirió de " + VehiculoAdquiridoDe + " el " + fechaAdquirido;
 			
 			if (TipoDePersonaComprador1 === 'moral'){
 				SegundaDeclaracion = " II.- Declara la “COMPRADORA” que " + CM1Nombre;
