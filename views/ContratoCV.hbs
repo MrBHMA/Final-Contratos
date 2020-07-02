@@ -1273,6 +1273,21 @@ next.onclick = function(){
 	}
 
 	if (listo == true){// // // // // ACTUALIZAR LA VISTA PREVIA // // // //
+	VF1nomb.value = VF1nomb.value.toUpperCase();
+	VF2nomb.value = VF2nomb.value.toUpperCase();
+	CF1nomb.value = CF1nomb.value.toUpperCase();
+	CF2nomb.value = CF2nomb.value.toUpperCase();
+
+	VM1nomb.value = VM1nomb.value.toUpperCase();
+	VM2nomb.value = VM2nomb.value.toUpperCase();
+	CM1nomb.value = CM1nomb.value.toUpperCase();
+	CM2nomb.value = CM2nomb.value.toUpperCase();
+
+	VM1nombRep.value = VM1nombRep.value.toUpperCase();
+	VM2nombRep.value = VM2nombRep.value.toUpperCase();
+	CM1nombRep.value = CM1nombRep.value.toUpperCase();
+	CM2nombRep.value = CM2nombRep.value.toUpperCase();
+
 	primerParrafo.innerHTML = "En " + municipio.value + ", " + estado.value + " el " + fecha.value; //generico
 
 		 console.log(VF1Sex.checked);
@@ -1330,7 +1345,7 @@ next.onclick = function(){
 
 			}
 			else if (comprador2 === 'm'){
-				primerParrafo.innerHTML = primerParrafo.innerHTML + ", junto con " + CM2nomb.value + ", representada por " + CM2nombRep.value ;
+				primerParrafo.innerHTML = primerParrafo.innerHTML + ", junto con " + CM2nomb.value + ", representada por " + CM2nombRep.value;
 			}
 		}
 		primerParrafo.innerHTML = primerParrafo.innerHTML + ", convienen celebrar un contrato de compraventa al tenor de las siguientes declaraciones y clausulas:";
@@ -1391,15 +1406,15 @@ next.onclick = function(){
 
 			PrimerClausula.innerHTML = PrimerClausula.innerHTML + DomicilioDelPago.value +". ";
 
-			SegundaClausula.innerHTML = " SEGUNDA.- PRECIO.- El precio por la presente operación de compraventa es la cantidad de $" + Precio.value + " pesos (" + "precio en letra 00/100 moneda nacional), que en este acto entrega el “COMPRADOR” al “VENDEDOR”" ;
+			SegundaClausula.innerHTML = " SEGUNDA.- PRECIO.- El precio por la presente operación de compraventa es la cantidad de $" + Precio.value + " pesos (" + PrecioLetra.value +"), que en este acto entrega el “COMPRADOR” al “VENDEDOR”" ;
 
 			if (MetodoEfectivo.checked){
-				SegundaClausula.innerHTML = SegundaClausula.innerHTML + " al contado."
+				SegundaClausula.innerHTML = SegundaClausula.innerHTML + " al contado.";
 			}
 			else if (MetodoCheque.checked){
-				SegundaClausula.innerHTML = SegundaClausula.innerHTML + " por medio de un cheque."
+				SegundaClausula.innerHTML = SegundaClausula.innerHTML + " por medio de un cheque.";
 			}
-			else{ SegundaClausula.innerHTML = SegundaClausula.innerHTML + "."}
+			else{ SegundaClausula.innerHTML = SegundaClausula.innerHTML + " por medio de " + OtroMetododoPago.value +".";}
 
 			TercerClausula.innerHTML = "TERCERA.- RESPONSABILIDAD Y CAMBIO DE PROPIETARIO.- A partir de la firma del presente contrato y entrega del vehículo objeto de compraventa, el “COMPRADOR” libera de toda responsabilidad al “VENDEDOR”, comprometiéndose a que en un breve lapso, que no podrá ser mayor de 30 días hábiles, realizará los trámites correspondientes ante la dependencia de gobierno correspondiente para hacer el cambio de propietario, siendo a cargo del “COMPRADOR” el pago de todos los gastos y derechos que deben cubrirse para tal objeto.";
 

@@ -99,14 +99,14 @@ app.post('/contrato', (req,res)=>{
     var VM1creacion=req.body.VM1creacion
     var VM1numero = req.body.VM1numero
     var VM1fecha = req.body.VM1fecha
-    var VM1nombrerepresentante= req.body.VM1nombrerepresentante
+    var VM1Nombrerepresentante= req.body.VM1nombrerepresentante
     // V 2
     var TipoDePersonaVendedor2 = req.body.tipodepersonavendedor2
     
-    var VF2nombre = req.body.VF2nombre
+    var VF2Nombre = req.body.VF2nombre
     var VF2genero=req.body.VF2genero
 
-    var VM2nombre = req.body.VM2nombre
+    var VM2Nombre = req.body.VM2nombre
     var VM2creacion = req.body.VM2creacion
     var VM2numero = req.body.VM2numero
     var VM2fecha = req.body.VM2fecha
@@ -131,7 +131,7 @@ app.post('/contrato', (req,res)=>{
     var CM2Creacion = req.body.CM2creacion 
     var CM2Numero = req.body.CM2numero
     var CM2Fecha =req.body.CM2fecha
-    var CM2NombreRepresentante = req.body.Cm2nombrerepresentante
+    var CM2NombreRepresentante = req.body.CM2nombrerepresentante
 
     var CF2Nombre = req.body.CF2nombre 
     var CF2Genero = req.body.CF2genero 
@@ -159,6 +159,7 @@ app.post('/contrato', (req,res)=>{
     var PrecioLetra = req.body.PrecioLetra
     
     var MetodoPago =req.body.MetodoPago
+    var otroMetodoPago =req.body.otroMetodoPago
 
     //variables adicionales
     var primerParrafo=[];
@@ -185,46 +186,24 @@ app.post('/contrato', (req,res)=>{
     doc.font('Helvetica-Bold',22).fill('#b34d4d').text('CONTRATO  DE  COMPRAVENTA',{align: 'center'})
     doc.lineWidth(1).lineCap('butt').moveTo(100,100).lineTo(515,100).stroke('#b34d4d');
     doc.text(" ")
-    /*primerParrafo="En " + municipio + ", " + estado + " el " + fecha;
-
-    console.log('Geneero ' + VF1Genero);
-    console.log('Geneero ' + );
-    if(VF1Genero=="m"){
-        primerParrafo=primerParrafo + " por una parte en calidad de “VENDEDORA”, " + VF1Nombre; 
-    } //m
-    else{
-        primerParrafo=primerParrafo+" por una parte en calidad de “VENDEDOR”, " + VF1Nombre
-    } //h
-
-    if(cantidadDeVendedores==2){
-        if(TipoDePersonaVendedor2=="fisica"){
-            if(VF2genero=="m"){
-                primerParrafo=primerParrafo+" junto con la vendedora " + VF2nombre
-            }
-            else{
-                primerParrafo=primerParrafo+" junto con el vendedor " + VF2nombre
-            }        
-        }
-        else if(TipoDePersonaVendedor2=="moral"){
-            primerParrafo=primerParrafo+" junto con " + VM2nombre + ", representada por " + VM2NombreRepresentante
-        } 
-    }
-    if(TipoDePersonaComprador1==="fisica"){
-        if(CF1Genero=="m"){primerParrafo=primerParrafo+", y por la otra como la “COMPRADORA”, " + CF1Nombre}
-        else{primerParrafo=primerParrafo+", y por la otra como “COMPRADOR ”, " + CF1Nombre}
-    }
-    else if(TipoDePersonaComprador1=="moral"){primerParrafo=primerParrafo+", junto con ”, " + CM1Nombre +", representada por "+CM1NombreRepresentante}
-
-    if(CantidadDeCompradores=="2"){
-        if(TipoDePersonaComprador2==="fisica"){
-            if(CF2Genero=="m"){primerParrafo=primerParrafo+", junto con la compradora ”, " + CF2Nombre}
-            else{primerParrafo=primerParrafo+", junto con el comprador ”, " + CF2Nombre}
-        }
-        else if(TipoDePersonaComprador2=="moral"){primerParrafo=primerParrafo+", junto con ”, " + CM2Nombre +", representada por "+CM2NombreRepresentante}
-    }*/
     ///////////////
     ///////////////
-///////////////
+    ///////////////
+        VF1Nombre = VF1Nombre.toUpperCase();
+        VF2Nombre = VF2Nombre.toUpperCase();
+        CF1Nombre = CF1Nombre.toUpperCase();
+        CF2Nombre = CF2Nombre.toUpperCase();
+
+        VM1Nombre = VM1Nombre.toUpperCase();
+        VM2Nombre = VM2Nombre.toUpperCase();
+        CM1Nombre = CM1Nombre.toUpperCase();
+        CM2Nombre = CM2Nombre.toUpperCase();
+
+        VM1Nombrerepresentante = VM1Nombrerepresentante.toUpperCase();
+        VM2NombreRepresentante = VM2NombreRepresentante.toUpperCase();
+        CM1NombreRepresentante = CM1NombreRepresentante.toUpperCase();
+        CM2NombreRepresentante = CM2NombreRepresentante.toUpperCase();
+
         primerParrafo = "En " + municipio + ", " + estado + " el " + fecha; //generico
 		
 		console.log("tipodepersonavendedor1 " + TipoDePersonaVendedor1);
@@ -237,20 +216,20 @@ app.post('/contrato', (req,res)=>{
             } //h
         }
 		else if (TipoDePersonaVendedor1 === 'moral'){
-			primerParrafo = primerParrafo + " por una parte en calidad de “VENDEDORA”, " + VM1Nombre + ", representada por " + VM1nombrerepresentante; 
+			primerParrafo = primerParrafo + " por una parte en calidad de “VENDEDORA”, " + VM1Nombre + ", representada por " + VM1Nombrerepresentante; 
 		}
 			
 		if (cantidadDeVendedores == 2){ // Adaptar al numero de vendedores
 			if (TipoDePersonaVendedor2 === 'fisica'){
 				if(VF2genero == 'm'){
-					primerParrafo = primerParrafo + " junto con la vendedora " + VF2nombre;
+					primerParrafo = primerParrafo + " junto con la vendedora " + VF2Nombre;
 				}
 				else{
-					primerParrafo = primerParrafo + " junto con el vendedor " + VF2nombre;
+					primerParrafo = primerParrafo + " junto con el vendedor " + VF2Nombre;
 				}
 			}
 			else if (TipoDePersonaVendedor2 === 'moral'){
-				primerParrafo = primerParrafo + " junto con " + VM2nombre + ", representada por " + VM2NombreRepresentante; 
+				primerParrafo = primerParrafo + " junto con " + VM2Nombre + ", representada por " + VM2NombreRepresentante; 
 			}
 		}
 		
@@ -259,20 +238,20 @@ app.post('/contrato', (req,res)=>{
                 primerParrafo=primerParrafo+", y por la otra como la “COMPRADORA”, " + CF1Nombre
 			}
 			else{
-				primerParrafo=primerParrafo+", y por la otra como “COMPRADOR ”, " + CF1Nombre
+				primerParrafo = primerParrafo+", y por la otra como “COMPRADOR ”, " + CF1Nombre
 			}
 		}
 		else if (TipoDePersonaComprador1 === 'moral'){
 			primerParrafo = primerParrafo + "y por la otra como la “COMPRADORA”, " + CM1Nombre + ", representada por " + CM1NombreRepresentante		
 		}
 			
-		if (CantidadDeCompradores === 2){
+		if (CantidadDeCompradores == 2){
 			if (TipoDePersonaComprador2 === 'fisica'){
-				if(CF2Sex.checked){
-					primerParrafo.innerHTML = primerParrafo.innerHTML + ", junto con la compradora " + CF2nomb.value;
+				if(CF2Genero == "m"){
+					primerParrafo = primerParrafo + ", junto con la compradora " + CF2Nombre.value;
 				}
 				else{
-					primerParrafo.innerHTML = primerParrafo.innerHTML + ", junto con el comprador " + CF2nomb.value;
+					primerParrafo = primerParrafo + ", junto con el comprador " + CF2Nombre.value;
 				}		
 					
 			}
@@ -316,10 +295,10 @@ app.post('/contrato', (req,res)=>{
 				PrimerDeclaracion = PrimerDeclaracion  + " factura a nombre de ";
 			}
 			if (TipoDePersonaVendedor1 === 'moral'){
-				PrimerDeclaracion = PrimerDeclaracion  +  VM2nombre;
+				PrimerDeclaracion = PrimerDeclaracion  +  VM2Nombre;
 			}
 			else{
-				PrimerDeclaracion = PrimerDeclaracion  + VF2nombre;
+				PrimerDeclaracion = PrimerDeclaracion  + VF2Nombre;
 			}
 			if (Pedimento){
 				PrimerDeclaracion = PrimerDeclaracion  + ", así como original de pedimento de importación.";
@@ -333,7 +312,9 @@ app.post('/contrato', (req,res)=>{
 			else if (MetodoPago === 'Cheque'){
 				SegundaClausula = SegundaClausula  + " por medio de un cheque."
 			}
-			else{ SegundaClausula = SegundaClausula  + "."}
+			else{ 
+                SegundaClausula = SegundaClausula   + " por medio de " + otroMetodoPago +"."
+            }
 			
 			TercerClausula = "TERCERA.- RESPONSABILIDAD Y CAMBIO DE PROPIETARIO.- A partir de la firma del presente contrato y entrega del vehículo objeto de compraventa, el “COMPRADOR” libera de toda responsabilidad al “VENDEDOR”, comprometiéndose a que en un breve lapso, que no podrá ser mayor de 30 días hábiles, realizará los trámites correspondientes ante la dependencia de gobierno correspondiente para hacer el cambio de propietario, siendo a cargo del “COMPRADOR” el pago de todos los gastos y derechos que deben cubrirse para tal objeto.";
 				
@@ -358,9 +339,9 @@ app.post('/contrato', (req,res)=>{
 
 			UltimoParrafo = "Leído que fue a las partes el presente contrato, anexando como apéndice los documentos mencionados en la declaración I, y copia simple de sus identificaciones oficiales, ante la presencia de dos testigos, proceden a firmar dos ejemplares del mismo.";
 
-///////////////*/
-///////////////
-///////////////
+    ///////////////*/
+    ///////////////
+    ///////////////
     doc.font('Times-Roman',12).fill('#000000').text(primerParrafo,{align: 'justify'})
     //DECLARACIONES 
     doc.text(" ")
