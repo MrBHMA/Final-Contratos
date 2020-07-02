@@ -1,6 +1,6 @@
 <title>Products > Signup</title>
 
-<div class="container mt-4 mb-4">
+<div class="container mt-4 mb-4" onsubmit="return Funcheck()">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
@@ -13,7 +13,6 @@
 						{{message}}
 					</div>
 
-				<script>}</script>
 			
 				<form action="/signup" method="post">
 
@@ -23,13 +22,22 @@
 						</div>
 						<input type="email" class="form-control" name="email" placeholder="Correo electronico">
 					</div>
+
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
 						</div>
 						<input type="password" name="password" class="form-control" placeholder="Contraseña">
 					</div>
-
+					
+					<!-- confirmar Contraseña -->
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+						</div>
+						<input type="password" name="confirmar" class="confirmar" placeholder="Confirmar">
+					</div>
+					<!-- -->
 					<div class="row">
 					
 					<div class="col-8 form-group">
@@ -48,4 +56,27 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+	console.log("");
+		
+		const pass = document.getElementsByClassName('password')
+		const check = document.getElementsByClassName('confirmar')
+
+		function Funcheck(){ //Se manda a llamar en el primer div la resivir un submit
+			if(pass.value == check.value){
+				console.log("coinciden las contraseñas");
+				console.log(pass.value);
+				console.log(check.value);
+				//return false; //
+				
+			}
+			else{
+				console.log("No coinciden las contraseñas");
+				return false;//Cancela el submit
+			}
+		}
+
+
+	</script>
 </div>
