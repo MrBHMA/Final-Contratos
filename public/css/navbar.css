@@ -5,8 +5,8 @@
 	background: radial-gradient(circle, rgb(255, 138, 125) 0%, rgb(255, 182, 98) 100%);
 	box-shadow: 2px 1px 5px black ;
 	height: 15%;
-	padding-bottom: 15px;
-  }
+	padding-bottom: 16px;
+}
   .nav-link:hover{
 	font-size:xx-large;
 	color:rgb(255, 255, 255);
@@ -30,3 +30,13 @@
 	box-shadow: 1px 1px 5px black;
 	margin-top: 50px;
   }
+  /*login y registro*/
+.card-body{
+
+	background-color: rgba(221, 221, 221, 0.6);
+	
+}
+.card
+{
+	box-shadow: 1px 1px 3px rgb(255, 184, 71);
+}
