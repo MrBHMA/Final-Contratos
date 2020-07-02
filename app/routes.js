@@ -205,7 +205,22 @@ app.post('/contrato', (req,res)=>{
         CM1NombreRepresentante = CM1NombreRepresentante.toUpperCase();
         CM2NombreRepresentante = CM2NombreRepresentante.toUpperCase();
 
-        primerParrafo = "En " + municipio + ", " + estado + " el " + fecha; //generico
+        var fecha1 =  new Date(fecha)
+        var fecha1Letra = (fecha1.getUTCDate()) + " de " + month_name(fecha1) + " del " + fecha1.getUTCFullYear()
+
+        var fechaVM1 =  new Date(VM1fecha)
+        var fechaVM1Letra = (fechaVM1.getUTCDate()) + " de " + month_name(fechaVM1) + " del " + fechaVM1.getUTCFullYear()
+        var fechaVM2 =  new Date(VM2fecha)
+        var fechaVM2Letra = (fechaVM2.getUTCDate()) + " de " + month_name(fechaVM2) + " del " + fechaVM2.getUTCFullYear()
+        var fechaCM1 =  new Date(CM1Fecha)
+        var fechaCM1Letra = (fechaCM1.getUTCDate()) + " de " + month_name(fechaCM1) + " del " + fechaCM1.getUTCFullYear()
+        var fechaCM2 =  new Date(CM2Fecha)
+        var fechaCM2Letra = (fechaCM2.getUTCDate()) + " de " + month_name(fechaCM2) + " del " + fechaCM2.getUTCFullYear()
+        
+        var fechaadquirido =  new Date(fechaAdquirido)
+        var fechaadquiridoLetra = (fechaadquirido.getUTCDate()) + " de " + month_name(fechaadquirido) + " del " + fechaadquirido.getUTCFullYear()
+   
+        primerParrafo = "En " + municipio + ", " + estado + " el " + fecha1Letra; //generico
 		
 		console.log("tipodepersonavendedor1 " + TipoDePersonaVendedor1);
 		if (TipoDePersonaVendedor1 === 'fisica'){
@@ -272,7 +287,7 @@ app.post('/contrato', (req,res)=>{
         }
             
         PrimerDeclaracion = PrimerDeclaracion + placasDeCirculacion +
-			", " + VehiculoDescripcion +	", con número de identificación vehicular " + NumeroIDVeicular + " mismo que adquirió de " + VehiculoAdquiridoDe + " el " + fechaAdquirido;
+			", " + VehiculoDescripcion +	", con número de identificación vehicular " + NumeroIDVeicular + " mismo que adquirió de " + VehiculoAdquiridoDe + " el " + fechaadquiridoLetra;
 			
 			if (TipoDePersonaComprador1 === 'moral'){
 				SegundaDeclaracion = " II.- Declara la “COMPRADORA” que " + CM1Nombre;
@@ -283,8 +298,8 @@ app.post('/contrato', (req,res)=>{
 			else {
 				SegundaDeclaracion = SegundaDeclaracion + ", es una sociedad mexicana constituida mediante poliza número " + CM1Numero;
 			}
-			SegundaDeclaracion = SegundaDeclaracion + ", de fecha " + CM1Fecha + ", inscrita bajo bajo número único del documento 201800007774" /*+ numero*/ + 
-				", de fecha " + CM1Fecha + ", del Registro Público de Comercio, con Registro Federal de Causantes IFR171212R67, y con domicilio en calle Jalapa número 11, interior 1, colonia Neidhart, " + municipio  + ", " +  estado;
+			SegundaDeclaracion = SegundaDeclaracion + ", de fecha " + fechaCM1Letra + ", inscrita bajo bajo número único del documento 201800007774" /*+ numero*/ + 
+				", de fecha " + fechaCM1Letra + ", del Registro Público de Comercio, con Registro Federal de Causantes IFR171212R67, y con domicilio en calle Jalapa número 11, interior 1, colonia Neidhart, " + municipio  + ", " +  estado;
 			}
 				
 			TercerDeclaracion = "II.- Declaran “VENDEDOR” y “COMPRADOR” que es su libre voluntad celebrar un contrato de compraventa respecto el bien mueble antes descrito para. Expuesto lo anterior, sobre la base de lo dispuesto por los numerales 6 y 2122 al 2190 del Código Civil vigente en el Estado de Baja California, las partes, establecen las siguientes:";
@@ -441,5 +456,10 @@ app.post('/descargar',(req,res)=>{ //post que permite el registro de un usuario
     res.download('Contrato.pdf')
     
  })
+
+ var month_name = function(dt){
+    mlist = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
+      return mlist[dt.getMonth()];
+    };
     
 }
