@@ -1,6 +1,6 @@
 
 body{
-	background: 
+	background: /*En esta parte esta el patron del fondo de la pagina */
     linear-gradient(180deg, rgba(248, 184, 139,0) 20%, rgba(248, 184, 139,.1) 20%, rgba(248, 184, 139,.1) 40%, rgba(248, 184, 139,.2) 40%, rgba(248, 184, 139,.2) 60%, rgba(248, 184, 139,.4) 60%, rgba(248, 184, 139,.4) 80%, rgba(248, 184, 139,.5) 80%),
     linear-gradient(45deg, rgba(250, 248, 132,.3) 20%, rgba(250, 248, 132,.4) 20%, rgba(250, 248, 132,.4) 40%, rgba(250, 248, 132,.5) 40%, rgba(250, 248, 132,.5) 60%, rgba(250, 248, 132,.6) 60%, rgba(250, 248, 132,.6) 80%, rgba(250, 248, 132,.7) 80%),
     linear-gradient(-45deg, rgba(186, 237, 145,0) 20%, rgba(186, 237, 145,.1) 20%, rgba(186, 237, 145,.1) 40%, rgba(186, 237, 145,.2) 40%, rgba(186, 237, 145,.2) 60%, rgba(186, 237, 145,.4) 60%, rgba(186, 237, 145,.4) 80%, rgba(186, 237, 145,.6) 80%),
@@ -40,12 +40,15 @@ label {
 }
 
 .Inputs1{
+	
+    
 	width: auto;
 	/*background: #D6D4FE;*/
 	background: rgba(250, 164, 114, 0.5);
 	padding: 8%;
 	border-radius: 5%;
 	box-shadow: rgb(200, 149, 100) 1px 1px 5px;
+
 
 }
 
@@ -76,7 +79,7 @@ label {
 .contrato{
 	display: flex;
 	align-content: flex-start;
-
+	
 	padding-top: 2%;
 	padding-right: 25px;
 }
