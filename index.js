@@ -2,7 +2,7 @@
 const express = require('express') //inicializar express
 const path = require('path') //cargar modulo para majear rutas
 const mongoose = require('mongoose') //permite conectar a  mongodb
-
+ 
 const passport = require('passport') //permite autenticar los inicios de sesion
 const flash = require('connect-flash')//poder enviar mensajes entre vistas
 const morgan = require('morgan')//forma de definir metodos http del servidor y mostrarlos
