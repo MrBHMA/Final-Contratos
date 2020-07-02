@@ -24,13 +24,18 @@ module.exports = function (passport) {
             if(err){return done(err);} //en caso de haber algun error en el registro
             if(user){return done(null, false, req.flash('signupMessage', 'El correo que intenta usar ya esta registrado.'))} //en caso de que el nombre ya exista
             else{ //si todo esta correcto, se mandan los datos y la contraseña cifrada
-                 var newUser =new User()
-                 newUser.local.email = email;
-                 newUser.local.password= newUser.generateHash(password); //se utiliza el metodo antes creado en el modelo para cifrar las contraseñas.
-                 newUser.save(function(err) {  //guardar los datos en la bd
-                    if(err) {throw err;} //en caso de algun error al guardar 
-                    return done(null, newUser);
-                 })
+                if(password == req.body.confirmar){
+                    var newUser =new User()
+                    newUser.local.email = email;
+                    newUser.local.password= newUser.generateHash(password); //se utiliza el metodo antes creado en el modelo para cifrar las contraseñas.
+                    newUser.save(function(err) {  //guardar los datos en la bd
+                        if(err) {throw err;} //en caso de algun error al guardar 
+                        return done(null, newUser);
+                    })
+                }
+                else{
+                    return done(null,false,req.flash('signupMessage','Las contraseña no coincide'))
+                }
             }
         })
     }))
