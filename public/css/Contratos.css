@@ -22,7 +22,16 @@ label {
 	font-size: 19px;
 
 }
+input, textarea, select{
+	border-radius: 5px;
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(255, 242, 233) 100%);
 
+}
+label{
+	font-size: larger;
+	margin-bottom: auto;
+}
 
 .Funcion{
 	padding-left: 5%;
