@@ -11,6 +11,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   	<script src="https://kit.fontawesome.com/2f6670760e.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
  <!--Seccion de campos-->
  <form action="/contrato" method="POST">
@@ -606,7 +607,7 @@
 	</section>
 
 </div>
-
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9%22%3E"> </script>
 
 
 <!-- AQUÍ EMPIEZAN LOS SCRIPTS  -->
@@ -624,7 +625,7 @@
 <!-- AQUÍ EMPIEZAN LOS SCRIPTS  -->
 
 <!-- AQUÍ EMPIEZAN LOS SCRIPTS  -->
-<script>
+<script>	
 		console.log('Si jalo el js');
 	// OCULTAR PARTES 2 Y 3 //
 document.getElementsByClassName('parte1')[0].style.display  =  'none';
@@ -1412,6 +1413,7 @@ next.onclick = function(){
 			UltimoParrafo.innerHTML = "Leído que fue a las partes el presente contrato, anexando como apéndice los documentos mencionados en la declaración I, y copia simple de sus identificaciones oficiales, ante la presencia de dos testigos, proceden a firmar dos ejemplares del mismo.";
 		}
 	}
+	else{swal("Algunos campos necesarios están vacíos", "Ingresa los campos marcados antes de continuar", "warning");}
 	FunActualizaInstrunciones();
 }
 
@@ -1518,11 +1520,8 @@ function SoloLetras(e) {
     $('.Adquirido').popover({title: "Adquirido de", content: "Escribe de donde se obtuvo el vehiculo a vender", trigger: "hover"});
     $('.Fadquirido').popover({title: "Fecha de adquisicion", content: "Escoge la fecha en la cual se adquirio el vehiculo de la compra-venta", trigger: "hover"});
   });
+	
 
-	Swal.fire({
-		title:"Alerta",
-		text:"Algunos campos están vacíos ",
-		icon:"warning"
-	})
+	 
 
 </script>
