@@ -824,7 +824,7 @@ const VM1nomb = document.querySelector('#VM1-nombre')
 const VM1escritura = document.querySelector('#VM1-escritura')
 const VM1num = document.querySelector('#VM1-numero')
 const VM1fecha = document.querySelector('#VM1-fecha')
-var fechaVM1 =  new Date(VM1fecha.value)
+//var fechaVM1 =  new Date(VM1fecha.value)
 const VM1nombRep = document.querySelector('#VM1-nombre-representante')
 const VM1Direccion = document.querySelector('#VM1Direccion')
 	// Vendedor moral 2
@@ -832,7 +832,7 @@ const VM2nomb = document.querySelector('#VM2-nombre')
 const VM2escritura = document.querySelector('#VM2-escritura')
 const VM2num = document.querySelector('#VM2-numero')
 const VM2fecha = document.querySelector('#VM2-fecha')
-var fechaVM2 =  new Date(VM2fecha.value)
+//var fechaVM2 =  new Date(VM2fecha.value)
 const VM2nombRep = document.querySelector('#VM2-nombre-representante')
 const VM2Direccion = document.querySelector('#VM2Direccion')
 
@@ -849,7 +849,7 @@ const CM1nomb = document.querySelector('#CM1-nombre')
 const CM1escritura = document.querySelector('#CM1-escritura')
 const CM1num = document.querySelector('#CM1-numero')
 const CM1fecha = document.querySelector('#CM1-fecha')
-var fechaCM1 =  new Date(CM1fecha.value)
+//var fechaCM1 =  new Date(CM1fecha.value)
 const CM1nombRep = document.querySelector('#CM1-nombre-representante')
 const CM1Direccion = document.querySelector('#CM1Direccion')
 	// Comprador moral 2
@@ -857,7 +857,7 @@ const CM2nomb = document.querySelector('#CM2-nombre')
 const CM2escritura = document.querySelector('#CM2-escritura')
 const CM2num = document.querySelector('#CM2-numero')
 const CM2fecha = document.querySelector('#CM2-fecha')
-var fechaCM2 =  new Date(CM2fecha.value)
+//var fechaCM2 =  new Date(CM2fecha.value)
 const CM2nombRep = document.querySelector('#CM2-nombre-representante')
 const CM2Direccion = document.querySelector('#CM2Direccion')
 
@@ -871,7 +871,7 @@ const PlacasDeCirculacion = document.querySelector('#Placas-de-circulacion')
 const VehiculoDescripcion = document.querySelector('#VehiculoDescripcion')
 const VehiculoAdquiridoDe = document.querySelector('#VehiculoAdquiridoDe')
 const FechaAdquirido = document.querySelector('#fechaAdquirido')
-var fechaadquirido =  new Date(FechaAdquirido.value)
+//var fechaadquirido =  new Date(FechaAdquirido.value)
 
 	//Datos de la venta (parte 3)
 const TarjetaDeCirculacion = document.querySelector('#TdeCirculacion')
@@ -1307,7 +1307,19 @@ next.onclick = function(){
 	CM2nombRep.value = CM2nombRep.value.toUpperCase();
 
 	var fecha1 =  new Date(fecha.value)
-	primerParrafo.innerHTML = "En " + municipio.value + ", " + estado.value + " el " + fecha1.getDate() + " de " + month_name(fecha1) + " del " + fecha1.getFullYear() //generico
+	var fecha1Letra = (fecha1.getUTCDate()) + " de " + month_name(fecha1) + " del " + fecha1.getUTCFullYear()
+	var fechaVM1 =  new Date(VM1fecha.value)
+	var fechaVM1Letra = (fechaVM1.getUTCDate()) + " de " + month_name(fechaVM1) + " del " + fechaVM1.getUTCFullYear()
+	var fechaVM2 =  new Date(VM2fecha.value)
+	var fechaVM2Letra = (fechaVM2.getUTCDate()) + " de " + month_name(fechaVM2) + " del " + fechaVM2.getUTCFullYear()
+	var fechaCM1 =  new Date(CM1fecha.value)
+	var fechaCM1Letra = (fechaCM1.getUTCDate()) + " de " + month_name(fechaCM1) + " del " + fechaCM1.getUTCFullYear()
+	var fechaCM2 =  new Date(CM2fecha.value)
+	var fechaCM2Letra = (fechaCM2.getUTCDate()) + " de " + month_name(fechaCM2) + " del " + fechaCM2.getUTCFullYear()
+	var fechaadquirido =  new Date(FechaAdquirido.value)
+	var fechaadquiridoLetra = (fechaadquirido.getUTCDate()) + " de " + month_name(fechaadquirido) + " del " + fechaadquirido.getUTCFullYear()
+
+	primerParrafo.innerHTML = "En " + municipio.value + ", " + estado.value + " el " + fecha1Letra //generico
 
 		 console.log(VF1Sex.checked);
 		if (Vendedor1 === 'f'){
@@ -1380,7 +1392,7 @@ next.onclick = function(){
 			", placas de circulación nacionales " + PlacasDeCirculacion.value +
 			" " + VehiculoDescripcion.value +
 			" mismo que adquirió de " + VehiculoAdquiridoDe.value +
-			" el " + FechaAdquirido.value;
+			" el " + fechaadquiridoLetra;
 
 			if (comprador1 === 'm'){
 				console.log('Si ');
@@ -1392,9 +1404,9 @@ next.onclick = function(){
 			else {
 				SegundaDeclaracion.innerHTML = SegundaDeclaracion.innerHTML + ", es una sociedad mexicana constituida mediante poliza número " + CM1num.value;
 			}
-			SegundaDeclaracion.innerHTML = SegundaDeclaracion.innerHTML + ", de fecha " + CM1fecha.value +
+			SegundaDeclaracion.innerHTML = SegundaDeclaracion.innerHTML + ", de fecha " + fechaCM1Letra +
 				", inscrita bajo bajo número único del documento "+ CM1num.value +
-				", de fecha " + CM1fecha.value + ", del Registro Público de Comercio, con Registro Federal de Causantes IFR171212R67, y con domicilio en calle Jalapa número 11, interior 1, colonia Neidhart, Tijuana, Baja California ";
+				", de fecha " + fechaCM1Letra + ", del Registro Público de Comercio, con Registro Federal de Causantes IFR171212R67, y con domicilio en calle Jalapa número 11, interior 1, colonia Neidhart, Tijuana, Baja California ";
 			}
 
 			TercerDeclaracion.innerHTML = "II.- Declaran “VENDEDOR” y “COMPRADOR” que es su libre voluntad celebrar un contrato de compraventa respecto el bien mueble antes descrito para. Expuesto lo anterior, sobre la base de lo dispuesto por los numerales 6 y 2122 al 2190 del Código Civil vigente en el Estado de Baja California, las partes, establecen las siguientes:";
@@ -1513,7 +1525,6 @@ function onSubmit(e) {
     // Create new list item with user
 	console.log('otra');
     const li = document.createElement('li');
-
   }
 }
 
@@ -1574,16 +1585,6 @@ var month_name = function(dt){
 mlist = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
   return mlist[dt.getMonth()];
 };
-console.log(month_name(new Date(fecha.value)));
-
-console.log(new Date(fecha.value).getMonth());
-
-var date1 =  new Date(fecha.value)
-
-console.log(date1.getMonth());
-console.log("test " + date1.getDay() + " de " + month_name(date1) + " del " + date1.getFullYear());
-
-
 
 
 
