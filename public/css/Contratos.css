@@ -15,8 +15,14 @@ h2{
 	font-family: Arial;
 	color: firebrick;
 	border-bottom: 1px solid;
-    }
-
+	
+}
+.confirmarbtn:hover{
+	color: rgb(180, 193, 255);
+}
+.btnConfirmar2:hover{
+	color: rgb(255, 152, 134);
+}
 label {
 	font-family: liberation sans;
 	font-size: 19px;
