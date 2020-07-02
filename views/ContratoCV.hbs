@@ -809,57 +809,59 @@ const camponec = document.querySelectorAll('.camponecesario')
 const estado = document.querySelector('#estado')
 const municipio = document.querySelector('#municipio')
 const fecha = document.querySelector('#fecha')
-	//Vendedores fisicos
+
+
+	//Vendedor fisico 1
 const VF1nomb = document.querySelector('#VF1-nombre')
 const VF1Sex = document.querySelector('#VF1-m')
 const VF1Direccion = document.querySelector('#VF1Direccion')
-const VF2Direccion = document.querySelector('#VF2Direccion')
-const VM1Direccion = document.querySelector('#VM1Direccion')
-const VM2Direccion = document.querySelector('#VM2Direccion')
-
-const CF1Direccion = document.querySelector('#CF1Direccion')
-const CF2Direccion = document.querySelector('#CF2Direccion')
-const CM1Direccion = document.querySelector('#CM1Direccion')
-const CM2Direccion = document.querySelector('#CM2Direccion')
-
+	//Vendedor fisico 2
 const VF2nomb = document.querySelector('#VF2-nombre')
 const VF2Sex = document.querySelector('#VF2-m')
-
-// Vendedor moral 1
+const VF2Direccion = document.querySelector('#VF2Direccion')
+	// Vendedor moral 1
 const VM1nomb = document.querySelector('#VM1-nombre')
 const VM1escritura = document.querySelector('#VM1-escritura')
 const VM1num = document.querySelector('#VM1-numero')
 const VM1fecha = document.querySelector('#VM1-fecha')
+var fechaVM1 =  new Date(VM1fecha.value)
 const VM1nombRep = document.querySelector('#VM1-nombre-representante')
-
-// Vendedor moral 2
+const VM1Direccion = document.querySelector('#VM1Direccion')
+	// Vendedor moral 2
 const VM2nomb = document.querySelector('#VM2-nombre')
 const VM2escritura = document.querySelector('#VM2-escritura')
 const VM2num = document.querySelector('#VM2-numero')
 const VM2fecha = document.querySelector('#VM2-fecha')
+var fechaVM2 =  new Date(VM2fecha.value)
 const VM2nombRep = document.querySelector('#VM2-nombre-representante')
+const VM2Direccion = document.querySelector('#VM2Direccion')
 
-	//Compradores fisicos
+	//Comprador fisico 1
 const CF1nomb = document.querySelector('#CF1-nombre')
 const CF1Sex = document.querySelector('#CF1-m')
-	//
+const CF1Direccion = document.querySelector('#CF1Direccion')
+	//Comprador fisico 2
 const CF2nomb = document.querySelector('#CF2-nombre')
 const CF2Sex = document.querySelector('#CF2-m')
-
-// Comprador moral 1
+const CF2Direccion = document.querySelector('#CF2Direccion')
+	// Comprador moral 1
 const CM1nomb = document.querySelector('#CM1-nombre')
 const CM1escritura = document.querySelector('#CM1-escritura')
 const CM1num = document.querySelector('#CM1-numero')
 const CM1fecha = document.querySelector('#CM1-fecha')
+var fechaCM1 =  new Date(CM1fecha.value)
 const CM1nombRep = document.querySelector('#CM1-nombre-representante')
-
-// Comprador moral 2
+const CM1Direccion = document.querySelector('#CM1Direccion')
+	// Comprador moral 2
 const CM2nomb = document.querySelector('#CM2-nombre')
 const CM2escritura = document.querySelector('#CM2-escritura')
 const CM2num = document.querySelector('#CM2-numero')
 const CM2fecha = document.querySelector('#CM2-fecha')
+var fechaCM2 =  new Date(CM2fecha.value)
 const CM2nombRep = document.querySelector('#CM2-nombre-representante')
+const CM2Direccion = document.querySelector('#CM2Direccion')
 
+	//Datos del objeto (parte 2)
 const TipoDeObjeto = document.querySelector('#Tipo-de-objeto')
 const VehiculoTipo = document.querySelector('#Vehiculo-Tipo')
 const VehiculoMarca = document.querySelector('#VehiculoMarca')
@@ -869,8 +871,9 @@ const PlacasDeCirculacion = document.querySelector('#Placas-de-circulacion')
 const VehiculoDescripcion = document.querySelector('#VehiculoDescripcion')
 const VehiculoAdquiridoDe = document.querySelector('#VehiculoAdquiridoDe')
 const FechaAdquirido = document.querySelector('#fechaAdquirido')
+var fechaadquirido =  new Date(FechaAdquirido.value)
 
-//Datos de la venta
+	//Datos de la venta (parte 3)
 const TarjetaDeCirculacion = document.querySelector('#TdeCirculacion')
 const Factura = document.querySelector('#Factura')
 const Pedimento = document.querySelector('#Pedimento')
@@ -904,6 +907,15 @@ const QC1 = document.querySelector('#QC1')
 const QC2 = document.querySelector('#QC2')
 const UltimoParrafo = document.querySelector('#UltimoParrafo')
 
+
+///////
+//var date1 =  new Date(fecha.value)
+/*fecha1 = fecha.value;
+var fecha1Letra = "test " + fecha1.getDay() + " de " + month_name(fecha1) + " del " + fecha1.getFullYear();
+
+console.log(fecha1Letra);
+console.log("test " + date1.getDay() + " de " + month_name(date1) + " del " + date1.getFullYear());
+///////*/
 
 fecha.addEventListener('submit', onSubmit);
 
@@ -1294,7 +1306,8 @@ next.onclick = function(){
 	CM1nombRep.value = CM1nombRep.value.toUpperCase();
 	CM2nombRep.value = CM2nombRep.value.toUpperCase();
 
-	primerParrafo.innerHTML = "En " + municipio.value + ", " + estado.value + " el " + fecha.value; //generico
+	var fecha1 =  new Date(fecha.value)
+	primerParrafo.innerHTML = "En " + municipio.value + ", " + estado.value + " el " + fecha1.getDate() + " de " + month_name(fecha1) + " del " + fecha1.getFullYear() //generico
 
 		 console.log(VF1Sex.checked);
 		if (Vendedor1 === 'f'){
@@ -1556,5 +1569,40 @@ function SoloLetras(e) {
 	
 
 	 
+
+var month_name = function(dt){
+mlist = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
+  return mlist[dt.getMonth()];
+};
+console.log(month_name(new Date(fecha.value)));
+
+console.log(new Date(fecha.value).getMonth());
+
+var date1 =  new Date(fecha.value)
+
+console.log(date1.getMonth());
+console.log("test " + date1.getDay() + " de " + month_name(date1) + " del " + date1.getFullYear());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
