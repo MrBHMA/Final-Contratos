@@ -1250,6 +1250,18 @@ next.onclick = function(){
 			console.log('Precio');
 		}else{Precio.style.background = 'white';}
 
+		if(PrecioLetra.value === '') {
+			listo = false;
+			PrecioLetra.style.background = 'pink';
+			console.log('PrecioLetra');
+		}else{PrecioLetra.style.background = 'white';}
+
+		if(OtroMetododoPago.value === '' && MetodoOtro.checked) {
+			listo = false;
+			OtroMetododoPago.style.background = 'pink';
+			console.log('OtroMetododoPago');
+		}else{OtroMetododoPago.style.background = 'white';}
+
 		if (listo === true){
 			ParteActual = 4;
 			next.style.display  =  'none';
